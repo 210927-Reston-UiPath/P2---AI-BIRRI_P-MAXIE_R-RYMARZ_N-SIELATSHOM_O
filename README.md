@@ -1,4 +1,4 @@
-# P2---AI-BIRRI_P.-MAXIE_R-RYMARZ_N-SIELATSHOM_O
+# P2---AI-BIRRI_P-MAXIE_R-RYMARZ_N-SIELATSHOM_O
 ------------------------------------------------
 
 **Project #2**
