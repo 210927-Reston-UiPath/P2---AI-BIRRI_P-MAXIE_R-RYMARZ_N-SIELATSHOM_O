@@ -79,6 +79,15 @@ User is able to receive Email graph data to a client
 
 **Constraint**
 --------------
+Websites:
+Site #1
+https://www.investopedia.com/simulator/
+
+Site #2
+To Be Created (HTML)
+
+----
+
 Using a State Machine
 
 Using Data Scraped Data to Buy and Sell(transaction) as a single client (Selecting the five best options out a pool of 20 stock options)
