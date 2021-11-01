@@ -41,11 +41,23 @@ Return to View Stock List On Hand
 --------------
 User is able to View Stock Options
 
+User is able to see application results at the end of the day
+
+User is able to receive end of day report by email
+
+User Buys and Sells Stock without being at their computer
+
 Bot is able to Buy
 
 Bot is able to Sell
 
-User is able to see application results at the end of the day
+Bot Scrapes Porfolio Page 
+
+Bot Scrapes Research Page
+
+Bot compares and evaluates stock based on the information gathered from scraped data
+
+Unattended Bot is able to start and end using Orchestrator (Condition; Loop every 5m)
 
 **Stretch**
 --------------
@@ -57,9 +69,9 @@ User is able to Initiate transaction process as a bulk transaction for Multiple 
 
 User is able to send out multiple emails after bulk transaction process
 
-User is able to receive end of day report by email.
-
 User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format)
+
+User is able to receive Email graph data to a client 
 
 **Constraint**
 --------------
@@ -68,8 +80,6 @@ Using a State Machine
 Using Data Scraped Data to Buy and Sell(transaction) as a single client (Selecting the five best options out a pool of 20 stock options)
 
 Using Excel - Exporting the final report as a graph
-
-Email graph data to a client 
 
 Timed Conditions(Start at x time, end at y time, Restart program at time z)
 
