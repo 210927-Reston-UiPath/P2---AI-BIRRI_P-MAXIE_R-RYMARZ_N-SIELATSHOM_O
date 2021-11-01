@@ -48,7 +48,7 @@ User is able to receive end of day report by email
 
 User Buys and Sells Stock without being at their computer
 
-**MVP
+MVP
 --------------
 
 Bot is able to Buy
