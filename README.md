@@ -37,8 +37,9 @@ Buy or Sell stock based on comparison
 
 Return to View Stock List On Hand
 
-**MVP/User Stories**
---------------
+**User Stories**
+---
+
 User is able to View Stock Options
 
 User is able to see application results at the end of the day
@@ -46,6 +47,9 @@ User is able to see application results at the end of the day
 User is able to receive end of day report by email
 
 User Buys and Sells Stock without being at their computer
+
+**MVP
+--------------
 
 Bot is able to Buy
 
