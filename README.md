@@ -9,7 +9,7 @@ Allowing customers to buy and sell optimized stock options.
 
 ----
 
-Workflow Goal: The goal for this automation is to reflect the following workflow.
+**Workflow Goal**: The goal for this automation is to reflect the following workflow.
 
 (Workflow Condition: Can only Buy and Sell from time x to time y)
 
