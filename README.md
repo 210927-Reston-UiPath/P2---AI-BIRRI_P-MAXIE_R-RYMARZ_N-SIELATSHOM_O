@@ -9,30 +9,30 @@ Allowing customers to buy and sell optimized stock options.
 
 Workflow Goal: The goal for this automation is to reflect the following workflow.
 
-
 (Workflow Condition: Can only Buy and Sell from time x to time y)
+
 **Login**
 
 Use Customer Database to input Customer information (User Name and Password)
 
-Stock On Hand
----
+**Stock On Hand**
+
 View Stock List On Hand
 
-Lookup New Stock
----
+**Lookup New Stock**
+
 View Updated Stock List
 
-Compare Stock
----
-Compare Stock (Condition: 5m)
+**Compare Stock**
 
-Buy or Sell 
----
+Comparison of Stock via Stock List (Condition: 5m)
+
+**Buy or Sell **
+
 Buy or Sell stock based on comparison
 
-Return to Stock Owned
----
+**Return to Stock Owned**
+
 Return to View Stock List On hand
 
 **MVP/User Stories**
