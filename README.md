@@ -35,7 +35,7 @@ Buy or Sell stock based on comparison
 
 **Return to Stock Owned**
 
-Return to View Stock List On hand
+Return to View Stock List On Hand
 
 **MVP/User Stories**
 --------------
