@@ -29,7 +29,7 @@ View Updated Stock List
 
 Comparison of Stock via Stock List (Condition: 5m)
 
-**Buy or Sell **
+**Buy or Sell**
 
 Buy or Sell stock based on comparison
 
