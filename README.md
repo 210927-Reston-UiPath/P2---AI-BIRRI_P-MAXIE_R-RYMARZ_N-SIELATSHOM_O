@@ -63,7 +63,7 @@ Bot Scrapes Research Page
 
 Bot compares and evaluates stock based on the information gathered from scraped data
 
-Unattended Bot is able to start and end using Orchestrator (Condition; Loop every 5m)
+Psuedo Unattended Bot is able to start and end using Orchestrator (Condition; Loop every 5m)
 
 **Stretch**
 --------------
