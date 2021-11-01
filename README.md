@@ -33,7 +33,7 @@ Comparison of Stock via Stock List (Condition: 5m)
 
 Buy or Sell stock based on comparison
 
-**Return to Stock Owned**
+**Return to Stock On Hand**
 
 Return to View Stock List On Hand
 
