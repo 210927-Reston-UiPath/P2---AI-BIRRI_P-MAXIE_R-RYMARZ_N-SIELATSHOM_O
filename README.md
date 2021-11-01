@@ -80,6 +80,7 @@ User is able to receive Email graph data to a client
 **Constraint**
 --------------
 Websites:
+
 Site #1
 https://www.investopedia.com/simulator/
 
