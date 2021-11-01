@@ -7,6 +7,8 @@ Goal - The Best Return: User will make the most out of investments.
 This will occur through an automated process that will optimize their options concerning Stock.
 Allowing customers to buy and sell optimized stock options.
 
+----
+
 Workflow Goal: The goal for this automation is to reflect the following workflow.
 
 (Workflow Condition: Can only Buy and Sell from time x to time y)
