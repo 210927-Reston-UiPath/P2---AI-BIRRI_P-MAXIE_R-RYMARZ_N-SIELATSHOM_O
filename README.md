@@ -3,6 +3,8 @@
 
 **Project #2**
 
+**Overview (To Be Updated)**
+
 Goal - The Best Return: User will make the most out of investments. 
 This will occur through an automated process that will optimize their options concerning Stock.
 Allowing customers to buy and sell optimized stock options.
