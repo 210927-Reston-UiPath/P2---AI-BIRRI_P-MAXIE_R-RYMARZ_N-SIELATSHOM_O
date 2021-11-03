@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1412,843.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>958,1385</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>P2_ScrapeResearchFinal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -60,7 +60,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -92,9 +92,10 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="P2-Interface/Switch" sap:VirtualizedContainerService.HintSize="538.4,744.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="P2-Interface/Switch" sap:VirtualizedContainerService.HintSize="558,3161" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="switchOne" />
     </Sequence.Variables>
@@ -103,19 +104,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="496.8,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Select Option" OptionsString="View Stock Portfolio;Update Stock;Buy;Sell;Exit" Title="Search For Stock">
+    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="516,296" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Select Option" OptionsString="View Stock Portfolio;Update Stock;Buy;Sell;Exit" Title="Search For Stock">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[switchOne]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[switchOne]" sap:VirtualizedContainerService.HintSize="496.8,316.8" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="Update Stock" DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="475.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[switchOne]" sap:VirtualizedContainerService.HintSize="516,2733" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="Update Stock" DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,68" sap2010:WorkflowViewState.IdRef="Sequence_11">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
           <Variable x:TypeArguments="sd:DataTable" Name="dtDatatable2" />
           <Variable x:TypeArguments="x:String" Name="stringTest" />
           <Variable x:TypeArguments="sd:DataTable" Name="dtDatatable1" />
-          <Variable x:TypeArguments="ui:DatabaseConnection" Name="dtConnection" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -123,21 +123,21 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Research  Page'" sap:VirtualizedContainerService.HintSize="433.6,347.2" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="60fb9a7e2b2a2f3067c40d7601044545" Selector="&lt;html app='msedge.exe' title='Research - Investopedia Stock Simulator' /&gt;">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Research  Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="ca88e27343c18b4e356a8131ecb6c1cd" Selector="&lt;html app='msedge.exe' title='Research - Investopedia Stock Simulator' /&gt;">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
+                <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
                   <ui:ExtractData.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c511e4f2-f100-40e1-9559-3aa3545a575a" InformativeScreenshot="55b0ed6a630d0ddd5c11905f2af21eb9" Selector="&lt;webctrl src='https://www.tradingview-widget.com/embed-widget/screener/investo*' tag='IFRAME' /&gt;&lt;webctrl aaname='TickerNo matches3 items Last Chg % Chg Rating Vol Mkt Cap P/E EP*' tag='TABLE' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c511e4f2-f100-40e1-9559-3aa3545a575a" InformativeScreenshot="860003fc5c6746eba258f954e2d99bfe" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='5' parentid='app' tag='DIV' /&gt;" WaitForReady="COMPLETE">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -148,7 +148,7 @@
             </ActivityAction>
           </ui:BrowserScope.Body>
         </ui:BrowserScope>
-        <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtDatatable1]" SelectColumnsMode="Remove">
+        <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtDatatable1]" SelectColumnsMode="Remove">
           <ui:FilterDataTable.Filters>
             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
               <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -165,7 +165,7 @@
             </scg:List>
           </ui:FilterDataTable.SelectColumns>
         </ui:FilterDataTable>
-        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="433.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
           <ui:MultipleAssign.AssignOperations>
             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -187,38 +187,10 @@
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
-        <ui:OutputDataTable DataTable="[dtDatatable1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="433.6,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[stringTest]" />
-        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[stringTest]" />
-        <ui:CommentOut DisplayName="Comment Out-Add Data to SQLDatabase" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-          <ui:CommentOut.Body>
-            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,161.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:DatabaseConnect DatabaseConnection="[dtConnection]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=tcp:007bb.database.windows.net;Initial Catalog=007BB;User ID=AD007;Password=YAJ8vkU25JCH8dy" />
-                <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" DataTable="[dtDatatable1]" DisplayName="Insert" ExistingDbConnection="[dtConnection]" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="InsertDataTable_1" TableName="ResearchStock" />
-                <ui:DatabaseDisconnect DatabaseConnection="[dtConnection]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
-              </Sequence>
-            </Sequence>
-          </ui:CommentOut.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:CommentOut>
+        <ui:OutputDataTable DataTable="[dtDatatable1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[stringTest]" />
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[stringTest]" />
       </Sequence>
-      <Sequence x:Key="View Stock Portfolio" DisplayName="Scrape Portfolio Page" sap:VirtualizedContainerService.HintSize="516.8,68.8" sap2010:WorkflowViewState.IdRef="Sequence_21">
+      <Sequence x:Key="View Stock Portfolio" DisplayName="Scrape Portfolio Page" sap:VirtualizedContainerService.HintSize="518,68" sap2010:WorkflowViewState.IdRef="Sequence_21">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
           <Variable x:TypeArguments="sd:DataTable" Name="portfolio" />
@@ -230,7 +202,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="475.2,440" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,582" sap2010:WorkflowViewState.IdRef="Sequence_15">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable2" />
           </Sequence.Variables>
@@ -239,19 +211,41 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Portfolio Page'" sap:VirtualizedContainerService.HintSize="433.6,347.2" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="1b96915acb03719d28eb1f9faa247137" Selector="&lt;html app='msedge.exe' title='Portfolio - Investopedia Stock Simulator' /&gt;">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/portfolio'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_28" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a54811cc-03be-4fe9-bee0-be764d756aca" InformativeScreenshot="1fd427dce9805d74d3c1f236afe0afec" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&lt;webctrl aaname='             portfolio           ' tag='A' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Portfolio Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="1b96915acb03719d28eb1f9faa247137" Selector="&lt;html app='msedge.exe' title='Portfolio - Investopedia Stock Simulator' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100" SimulateClick="True">
+                  <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="100" SimulateClick="True">
                     <ui:ExtractData.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17741fdc-1157-4d1b-9294-e4c5f40227e8" InformativeScreenshot="1a19c4b1d217f58ef37e366f25181460" Selector="&lt;webctrl tag='TABLE' /&gt;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
@@ -265,15 +259,15 @@
             </ui:BrowserScope.Body>
           </ui:BrowserScope>
         </Sequence>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="475.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,52" sap2010:WorkflowViewState.IdRef="CommentOut_7">
           <ui:CommentOut.Body>
-            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="516.8,161.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="517.5,160" sap2010:WorkflowViewState.IdRef="Sequence_18">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -315,49 +309,49 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:BuildDataTable DataTable="[portfolio]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="475.2,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Symbol&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Current_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Today_x0027_s_x0020_Change&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total_x0020_Gain_x002F_Loss&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="475.2,264" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:BuildDataTable DataTable="[portfolio]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_3" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Symbol&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Current_x0020_Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Today_x0027_s_x0020_Change&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total_x0020_Gain_x002F_Loss&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="476,263" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_19">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{cstr(row(&quot;Symbol&quot;)),cdbl(cstr(row(&quot;Current Price&quot;)).replace(&quot;$&quot;,&quot;&quot;)) , cdbl(split(cstr(row(&quot;Today's Change&quot;)),&quot;(&quot;)(1).replace(&quot;%)&quot;,&quot;&quot;)) , cdbl(split(cstr(row(&quot;Total Gain/Loss&quot;)),&quot;(&quot;)(1).replace(&quot;%)&quot;,&quot;&quot;))}]" DataTable="[portfolio]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{cstr(row(&quot;Symbol&quot;)),cdbl(cstr(row(&quot;Current Price&quot;)).replace(&quot;$&quot;,&quot;&quot;)) , cdbl(split(cstr(row(&quot;Today's Change&quot;)),&quot;(&quot;)(1).replace(&quot;%)&quot;,&quot;&quot;)) , cdbl(split(cstr(row(&quot;Total Gain/Loss&quot;)),&quot;(&quot;)(1).replace(&quot;%)&quot;,&quot;&quot;))}]" DataTable="[portfolio]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
               </Sequence>
             </ActivityAction>
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="475.2,95.2" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Final Data Contains Symbol(string), Current Price(Double), Today's Change(double), Total Gain/Loss(Double)" />
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[portfolio]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="475.2,304" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:Comment sap:VirtualizedContainerService.HintSize="476,94.5" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Final Data Contains Symbol(string), Current Price(Double), Today's Change(double), Total Gain/Loss(Double)" />
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[portfolio]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="476,303" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="271.2,155.2" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="272.5,154" sap2010:WorkflowViewState.IdRef="Sequence_20">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[string.join(&quot; &quot;, row.itemArray)]" />
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230.5,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[string.join(&quot; &quot;, row.itemArray)]" />
               </Sequence>
             </ActivityAction>
           </ui:ForEachRow.Body>
         </ui:ForEachRow>
-        <ui:OutputDataTable DataTable="[portfolio]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="475.2,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[stringTest]" />
-        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="475.2,60" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[stringTest]" />
+        <ui:OutputDataTable DataTable="[portfolio]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[stringTest]" />
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[stringTest]" />
       </Sequence>
-      <StateMachine InitialState="{x:Reference __ReferenceID3}" x:Key="Buy" DisplayName="Buying_Stock_State_Machine" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+      <StateMachine InitialState="{x:Reference __ReferenceID3}" x:Key="Buy" DisplayName="Buying_Stock_State_Machine" sap:VirtualizedContainerService.HintSize="886,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <av:Point x:Key="ShapeLocation">410,2.5</av:Point>
             <x:Double x:Key="StateContainerWidth">852</x:Double>
             <x:Double x:Key="StateContainerHeight">600</x:Double>
@@ -365,21 +359,21 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <State x:Name="__ReferenceID3" DisplayName="BuyTesla Stock" sap:VirtualizedContainerService.HintSize="172.8,100.8" sap2010:WorkflowViewState.IdRef="State_4">
+        <State x:Name="__ReferenceID3" DisplayName="BuyTesla Stock" sap:VirtualizedContainerService.HintSize="173,100" sap2010:WorkflowViewState.IdRef="State_4">
           <State.Entry>
-            <Sequence sap:VirtualizedContainerService.HintSize="508,2437.6" sap2010:WorkflowViewState.IdRef="Sequence_36">
+            <Sequence sap:VirtualizedContainerService.HintSize="476,2262" sap2010:WorkflowViewState.IdRef="Sequence_36">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Portfolio'" sap:VirtualizedContainerService.HintSize="466.4,2186.4" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="9bd9fe570048fc455bd37c49b5ebd850" Selector="&lt;html app='msedge.exe' title='Portfolio - Investopedia Stock Simulator' /&gt;">
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Portfolio'" sap:VirtualizedContainerService.HintSize="434,2170" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="c645f5bbf8346af340ffcbc01970da27" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;">
                 <ui:BrowserScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,2039.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,2024" sap2010:WorkflowViewState.IdRef="Sequence_25">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="password" />
                       </Sequence.Variables>
@@ -388,8 +382,8 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Stock Sequence Begin...&quot;]" />
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Go to TRADE" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/trade'" sap:VirtualizedContainerService.HintSize="333.6,138.4" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Stock Sequence Begin...&quot;]" />
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Go to TRADE" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/trade'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -416,7 +410,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -438,7 +432,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[BuyStock1]">
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[BuyStock1]">
                         <ui:TypeInto.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="58309652-0abe-4bec-af1f-3bf1d05a2c34" InformativeScreenshot="2e1edfa2c967b1e1c26d1dbe83915acb" Selector="&lt;webctrl aaname='  ' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='app' tag='DIV' /&gt;">
                             <ui:Target.TimeoutMS>
@@ -450,7 +444,7 @@
                           </ui:Target>
                         </ui:TypeInto.Target>
                       </ui:TypeInto>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV  list-item-254-0'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV  list-item-254-0'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -472,7 +466,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -494,7 +488,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -516,7 +510,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -538,7 +532,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -560,7 +554,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="3">
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="3">
                         <ui:TypeInto.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="94b5dd89-c208-494f-a22c-aabf5b388804" InformativeScreenshot="c0798a7155dbc896dcb6a8335bbb810e" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' parentid='app' tag='DIV' /&gt;">
                             <ui:Target.TimeoutMS>
@@ -572,7 +566,7 @@
                           </ui:Target>
                         </ui:TypeInto.Target>
                       </ui:TypeInto>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -594,7 +588,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -616,7 +610,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/trade/sto...'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/trade/sto...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -642,21 +636,12 @@
                   </ActivityAction>
                 </ui:BrowserScope.Body>
               </ui:BrowserScope>
-              <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="466.4,118.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.investopedia.com/simulator/">
-                <ui:OpenBrowser.Body>
-                  <ActivityAction x:TypeArguments="x:Object">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                    </ActivityAction.Argument>
-                  </ActivityAction>
-                </ui:OpenBrowser.Body>
-              </ui:OpenBrowser>
             </Sequence>
           </State.Entry>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">153.5,110</av:Point>
-              <av:Size x:Key="ShapeSize">172.8,100.8</av:Size>
+              <av:Size x:Key="ShapeSize">173,100</av:Size>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <x:Double x:Key="StateContainerWidth">139</x:Double>
               <x:Double x:Key="StateContainerHeight">64.079999999999984</x:Double>
@@ -672,27 +657,27 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Transition.To>
-                <State x:Name="__ReferenceID2" DisplayName="Buy J&amp;J Stock" sap:VirtualizedContainerService.HintSize="172.8,100" sap2010:WorkflowViewState.IdRef="State_3">
+                <State x:Name="__ReferenceID2" DisplayName="Buy J&amp;J Stock" sap:VirtualizedContainerService.HintSize="173,99.5" sap2010:WorkflowViewState.IdRef="State_3">
                   <State.Entry>
-                    <Sequence sap:VirtualizedContainerService.HintSize="475.2,1959.2" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                    <Sequence sap:VirtualizedContainerService.HintSize="476,1952" sap2010:WorkflowViewState.IdRef="Sequence_27">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Stocks'" sap:VirtualizedContainerService.HintSize="433.6,1866.4" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="f76abd0b833f9e951daa45a4048a665b" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;">
+                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Stocks'" sap:VirtualizedContainerService.HintSize="434,1860" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="f76abd0b833f9e951daa45a4048a665b" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;">
                         <ui:BrowserScope.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1719.2" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1714" sap2010:WorkflowViewState.IdRef="Sequence_26">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334.4,107.2" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -714,7 +699,7 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[BuyStock2]">
+                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[BuyStock2]">
                                 <ui:TypeInto.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="58309652-0abe-4bec-af1f-3bf1d05a2c34" InformativeScreenshot="2e1edfa2c967b1e1c26d1dbe83915acb" Selector="&lt;webctrl aaname='  ' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='app' tag='DIV' /&gt;">
                                     <ui:Target.TimeoutMS>
@@ -726,7 +711,7 @@
                                   </ui:Target>
                                 </ui:TypeInto.Target>
                               </ui:TypeInto>
-                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV  list-item-254-0'" sap:VirtualizedContainerService.HintSize="334.4,107.2" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV  list-item-254-0'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -748,7 +733,7 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334.4,107.2" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -770,7 +755,7 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="334.4,107.2" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'PATH'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
                                 <ui:Click.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -923,7 +908,7 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">153.5,260.5</av:Point>
-                      <av:Size x:Key="ShapeSize">172.8,100</av:Size>
+                      <av:Size x:Key="ShapeSize">173,99.5</av:Size>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       <x:Double x:Key="StateContainerWidth">139</x:Double>
                       <x:Double x:Key="StateContainerHeight">63.480000000000248</x:Double>
@@ -939,27 +924,27 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Transition.To>
-                        <State x:Name="__ReferenceID0" DisplayName="Buy Apple Stock" sap:VirtualizedContainerService.HintSize="180.8,113.6" sap2010:WorkflowViewState.IdRef="State_2">
+                        <State x:Name="__ReferenceID0" DisplayName="Buy Apple Stock" sap:VirtualizedContainerService.HintSize="181,112.5" sap2010:WorkflowViewState.IdRef="State_2">
                           <State.Entry>
-                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Trade'" sap:VirtualizedContainerService.HintSize="628.8,3892.8" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="97cd5209fbc155ceb2580f5c5b42449c" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;">
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe Trade'" sap:VirtualizedContainerService.HintSize="630,3898" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="97cd5209fbc155ceb2580f5c5b42449c" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;">
                               <ui:BrowserScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                   </ActivityAction.Argument>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="595.2,3745.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="596,3752" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="553.6,1667.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="554,1663" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Go to TRADE again to buy Apple stocks" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/trade'" sap:VirtualizedContainerService.HintSize="334.4,138.4" sap2010:WorkflowViewState.IdRef="Click_20" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Go to TRADE again to buy Apple stocks" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/trade'" sap:VirtualizedContainerService.HintSize="334.5,137" sap2010:WorkflowViewState.IdRef="Click_20" KeyModifiers="None" MouseButton="BTN_LEFT">
                                         <ui:Click.CursorPosition>
                                           <ui:CursorPosition Position="Center">
                                             <ui:CursorPosition.OffsetX>
@@ -986,7 +971,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:Click>
-                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334.4,107.2" sap2010:WorkflowViewState.IdRef="Click_21" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334.5,106" sap2010:WorkflowViewState.IdRef="Click_21" KeyModifiers="None" MouseButton="BTN_LEFT">
                                         <ui:Click.CursorPosition>
                                           <ui:CursorPosition Position="Center">
                                             <ui:CursorPosition.OffsetX>
@@ -1008,7 +993,7 @@
                                           </ui:Target>
                                         </ui:Click.Target>
                                       </ui:Click>
-                                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[BuyStock3]">
+                                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334.5,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[BuyStock3]">
                                         <ui:TypeInto.Target>
                                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dde06a5b-65de-4abe-9b86-5427fdf47c70" InformativeScreenshot="fc0e91afebe416497e3bfa1b2973d79e" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='app' tag='DIV' /&gt;">
                                             <ui:Target.TimeoutMS>
@@ -1120,7 +1105,7 @@
                                           </ui:Target>
                                         </ui:Click.Target>
                                       </ui:Click>
-                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Goes to Portfolio section" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/portfolio'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Click_26" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Goes to Portfolio section" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /simulator/portfolio'" sap:VirtualizedContainerService.HintSize="334.5,137" sap2010:WorkflowViewState.IdRef="Click_26" KeyModifiers="None" MouseButton="BTN_LEFT">
                                         <ui:Click.CursorPosition>
                                           <ui:CursorPosition Position="Center">
                                             <ui:CursorPosition.OffsetX>
@@ -1147,7 +1132,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:Click>
-                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="The result has not been shown on the screen, yet" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Click_27" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="The result has not been shown on the screen, yet" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334.5,137" sap2010:WorkflowViewState.IdRef="Click_27" KeyModifiers="None" MouseButton="BTN_LEFT">
                                         <ui:Click.CursorPosition>
                                           <ui:CursorPosition Position="Center">
                                             <ui:CursorPosition.OffsetX>
@@ -1175,9 +1160,9 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:Click>
                                     </Sequence>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Stock Sequence End..&quot;]" />
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Data Scrapping Data:&quot;]" />
-                                    <Sequence sap:VirtualizedContainerService.HintSize="554,1683" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Stock Sequence End..&quot;]" />
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Data Scrapping Data:&quot;]" />
+                                    <Sequence sap:VirtualizedContainerService.HintSize="554,1691" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
                                       </Sequence.Variables>
@@ -1186,13 +1171,13 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'TradeHist Page'" sap:VirtualizedContainerService.HintSize="512,1591" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="185f07e9e54517ce64b82061a6200808" Selector="&lt;html app='msedge.exe' title='Trade History - Investopedia Stock Simulator' /&gt;">
+                                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'TradeHist Page'" sap:VirtualizedContainerService.HintSize="512,1599" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="185f07e9e54517ce64b82061a6200808" Selector="&lt;html app='msedge.exe' title='Trade History - Investopedia Stock Simulator' /&gt;">
                                         <ui:BrowserScope.Body>
                                           <ActivityAction x:TypeArguments="x:Object">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,1445" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478,1453" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="ExtractedDataText" />
                                                 <Variable x:TypeArguments="x:String" Name="text" />
@@ -1229,19 +1214,19 @@
                                               </ui:FilterDataTable>
                                               <ui:OutputDataTable DataTable="[ExtractDataTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[text]" />
                                               <ui:LogMessage DisplayName="Filtered Stock Values" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[text]" />
-                                              <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="False" DataTable="[ExtractDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="Data\Format Data CSV.csv" sap:VirtualizedContainerService.HintSize="436,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
-                                              <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[ExtractedDataCSVOutput]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Data\Format Data CSV.csv" sap:VirtualizedContainerService.HintSize="436,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
+                                              <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="False" DataTable="[ExtractDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="Data\Format Data CSV.csv" sap:VirtualizedContainerService.HintSize="436,155" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+                                              <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[ExtractedDataCSVOutput]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Data\Format Data CSV.csv" sap:VirtualizedContainerService.HintSize="436,155" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
                                               <ui:OutputDataTable DataTable="[ExtractedDataCSVOutput]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[CSVText]" />
                                               <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'msedge.exe Trade'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="1a3362ec9be592defa201d6b2f72200f" WaitForReady="INTERACTIVE" />
-                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,261" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,263" sap2010:WorkflowViewState.IdRef="CommentOut_9">
                                                 <ui:CommentOut.Body>
-                                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[CSVText]" />
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[CSVText]" />
                                                   </Sequence>
                                                 </ui:CommentOut.Body>
                                               </ui:CommentOut>
@@ -1258,7 +1243,7 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">149.5,409.5</av:Point>
-                              <av:Size x:Key="ShapeSize">180.8,113.6</av:Size>
+                              <av:Size x:Key="ShapeSize">181,112.5</av:Size>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               <x:Double x:Key="StateContainerWidth">147</x:Double>
                               <x:Double x:Key="StateContainerHeight">76.48000000000024</x:Double>
@@ -1274,11 +1259,10 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <Transition.To>
-                                <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="158.4,120" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                                <State x:Name="__ReferenceID1" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="159,119.5" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                                   <State.Entry>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="543.2,1256" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,612" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                       <Sequence.Variables>
-                                        <Variable x:TypeArguments="ui:DatabaseConnection" Name="connection" />
                                         <Variable x:TypeArguments="x:String" Name="stringTest" />
                                       </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
@@ -1286,60 +1270,17 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="501.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Stock Purchase Sequence complete&quot;]" />
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="501.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Connecting to Database..&quot;]" />
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="501.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[CSVText]" />
-                                      <ui:OutputDataTable DataTable="[ExtractedDataCSVOutput]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="501.6,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_6" Text="[stringTest]" />
-                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="501.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[stringTest]" />
-                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="501.6,602.4" sap2010:WorkflowViewState.IdRef="CommentOut_10">
-                                        <ui:CommentOut.Body>
-                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="466.4,524" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ui:DatabaseConnect DatabaseConnection="[connection]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="424.8,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="System.Data.SqlClient" />
-                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractedDataCSVOutput]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="424.8,331.2" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
-                                              <ui:ForEachRow.Body>
-                                                <ActivityAction x:TypeArguments="sd:DataRow">
-                                                  <ActivityAction.Argument>
-                                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Stock" />
-                                                  </ActivityAction.Argument>
-                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,182.4" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[connection]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="INSERT INTO buyExpense(date,symbol,stockQuantity,stockPrice)VALUES(@Value1,@Value2,@Value3,@Value4)">
-                                                      <ui:ExecuteQuery.Parameters>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="Value1">[Stock.Item(0).ToString]</InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="Value2">[Stock.Item(1).ToString]</InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="Value3">[Stock.Item(2).ToString]</InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="Value4">[Stock.Item(3).ToString]</InArgument>
-                                                        <InArgument x:TypeArguments="x:String" x:Key="Argument1" />
-                                                      </ui:ExecuteQuery.Parameters>
-                                                    </ui:ExecuteQuery>
-                                                  </Sequence>
-                                                </ActivityAction>
-                                              </ui:ForEachRow.Body>
-                                            </ui:ForEachRow>
-                                          </Sequence>
-                                        </ui:CommentOut.Body>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:CommentOut>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Stock Purchase Sequence complete&quot;]" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Connecting to Database..&quot;]" />
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[CSVText]" />
+                                      <ui:OutputDataTable DataTable="[ExtractedDataCSVOutput]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_6" Text="[stringTest]" />
+                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[stringTest]" />
                                     </Sequence>
                                   </State.Entry>
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">371.5,403.5</av:Point>
-                                      <av:Size x:Key="ShapeSize">158.4,120</av:Size>
+                                      <av:Size x:Key="ShapeSize">159,119.5</av:Size>
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       <x:Double x:Key="StateContainerWidth">125</x:Double>
                                       <x:Double x:Key="StateContainerHeight">83.424983818770432</x:Double>
@@ -1366,25 +1307,26 @@
           <Variable x:TypeArguments="sd:DataTable" Name="ExtractedDataCSVOutput" />
         </StateMachine.Variables>
       </StateMachine>
-      <Sequence x:Key="Sell" sap:VirtualizedContainerService.HintSize="475.2,2440.8" sap2010:WorkflowViewState.IdRef="Sequence_24">
+      <Sequence x:Key="Sell" sap:VirtualizedContainerService.HintSize="476,2477" sap2010:WorkflowViewState.IdRef="Sequence_24">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Portfolio - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="433.6,2388" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Stocks Trade - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="434,2385" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,2171.2" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,2168" sap2010:WorkflowViewState.IdRef="Sequence_23">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NClick sap2010:Annotation.AnnotationText="Goes to trade option after getting stocks it should sell." ClickType="Single" DisplayName="Click 'trade'" sap:VirtualizedContainerService.HintSize="333.6,198.4" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick sap2010:Annotation.AnnotationText="Goes to trade option after getting stocks it should sell." ClickType="Single" DisplayName="Click 'trade'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/portfolio" DesignTimeRectangle="480, 180, 158, 60" ElementType="Text" FriendlyName="'trade'" FullSelectorArgument="&lt;webctrl aaname='             trade           ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='             trade           ' tag='A' type='' check:text='trade' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAABACAYAAACZfqySAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAScSURBVHhe7Z29SyNBGIfzN6XMv2Anx2FzpVWqK46z8QiEq64JgpYRhIAgKAgBMaAIkYByCMZCUsQUJhAMBILFpnqdRbL7zmZ2ZwcSZtb9HaTaZL/eZ573YxevUCx9J3xwD2wzULB9Ajg+FoHPQOHbj9/kfwAEgLDJAEBEaeKEhAAiQASINlMBju1WKQIjwogwIqzklpVsxgNGhBFhRJsrEMd2y8YwIowII8JKblnJZjxgRBgRRrS5AnFst2wMI8KIMCKs5JaVbMYDRoQRYUSbKxDHdsvGMCKMCCPCSm5ZyWY8YEQYEUa0uQJxbLdsDCPCiDCikZWar2T8b3Ad3OTzQfKvvdmU+p0m7WymMcUh3c/C/Q1bFU0wr6mvOXnPe6dh947q1V+J+9JdBz9Mv5nmWtz4TnaMuGYQgwB6r3T+UxOc2hMxDolGbdpONKseRA7QbNCmvzELAiDaTmHVM7poteVPdxrGb9Jb3n60rzDiXJiP7+eBHgdT8jgJkwf6k3C9e915xG9juionwctAFKDfRq+j06P+JLLPyRP9U8AYghi9jsi9EceoV92wXZrMlx0jqsDglmRpWHXhYQDf6b62HKANyXJzejyKC2KDHiVqP5kc3iSlZwbiTAAWA/nWwQO9sX17vSZtRL6ru440QXfxOwAxCHSZLkas7osD66AX2nMypbfFT4RFd2Itmg5EHxB5QSwvGoBoOzWv2Yg+BDzlzv4fKpuGOkvL/eY+3U4WJE7pdjfOoulBLJbKdNJjmV9YkRsMIH55ECt0xY3YKitAPGNp+YVORA230wnr1LdOWJPK6c8ERGFFXnJEUjlA/OIgyilR2E1V6B+/hKrqXX7Wb7uirmPpWd3kmIFYlOpV0cWze5+mWTmp6cZJ7jUxOawRFV3z6F3qgj3R+KjGMQ2WMp9PF8asyelZ2akaglji4x65TkwzvokrK1xsUhbnlEMQNYPt0Z16hrd5Sc/BT1+owSy1fTMOtqjTM0DULQKAyLj0RLrdiilBNk55WpYbiGL5joaL/SjHM4YgpkrN6jGULuCubs8hiJEAVlmNR2IwrXyqEulkE6WqAsQMRDQrLjYkSee0koG2DJnXPVsaIhc3zR7Red1GpOM2ARHjGyfewjBKHSsBUXSQGivKhhpTf/Cq+IzD589ej/akBZQeRAy0s2ZD/3xXBWKpQrwblR+tVdgTl6RHf2W2D/G9Az4iSQciHvFl9W9orwxEAY3UILA5YrkdNiJLppPncdycfooP7W7npYcszRPRrASZgJuPaGHF7VY4mlmu/SKDYT7iEdDWg32b1Zireg0sS/NEgMhLEv5CA/lW5I/90oxLeKMxp+fjxdBbD+I6XowFiFmsN3HOVpvVbBsR8FiFx2jCoYkVQATMTsAMEAEiQFyl2rEv917tMokJjAgjwogmKwbfzbbxdPGDEWFEGFG3SrD9a1uQxxdGhBFhRBgvP8bTxRpGhBFhRN0qwfb8GBNGhBFhRBgvP8bTxRpGhBFhRN0qwfb8GBNGhBFhRBgvP8bTxRpGhBFhRN0qwfb8GLNg/F9G4Ae4A2u4AwVYJz/WcTnWH5DGFYeyOO5HAAAAAElFTkSuQmCC" InformativeScreenshot="67f5764dc4a8ddb1b1e05c95ea0b1975.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Portfolio - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="trade" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
                   </uix:NClick.Target>
@@ -1394,7 +1336,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NClick>
-                <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types in the stock it should sell." ClickBeforeMode="None" DisplayName="Type Into 'INPUT  input-228'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,259.2" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" Text="[stock1]">
+                <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types in the stock it should sell." ClickBeforeMode="None" DisplayName="Type Into 'INPUT  input-228'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,259" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" Text="[stock1]">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="310, 444, 631, 40" ElementType="InputBox" FriendlyName="'INPUT  input-228'" FullSelectorArgument="&lt;webctrl id='input-228' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='input-228' tag='INPUT' type='text' aaname='' /&gt;" ImageBase64="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" InformativeScreenshot="4f4219942e704c5ab68a393ae26110fc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" />
                   </uix:NTypeInto.Target>
@@ -1404,22 +1346,22 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NTypeInto>
-                <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" sap2010:Annotation.AnnotationText="Selects the appropriate stock, then navigates to the buy/sell option." ClickBeforeMode="None" DisplayName="Keyboard Shortcuts " sap:VirtualizedContainerService.HintSize="333.6,193.6" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(down)][u(hk)][d(hk)][k(enter)][u(hk)][d(hk)][k(pgdn)][u(hk)][d(hk)][k(pgdn)][u(hk)]">
+                <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" sap2010:Annotation.AnnotationText="Selects the appropriate stock, then navigates to the buy/sell option." ClickBeforeMode="None" DisplayName="Keyboard Shortcuts " sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(down)][u(hk)][d(hk)][k(enter)][u(hk)][d(hk)][k(pgdn)][u(hk)][d(hk)][k(pgdn)][u(hk)]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NKeyboardShortcuts>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_8">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,291.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,290" sap2010:WorkflowViewState.IdRef="Sequence_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NClick sap2010:Annotation.AnnotationText="Clicks the drop down button." ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="333.6,198.4" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                      <uix:NClick sap2010:Annotation.AnnotationText="Clicks the drop down button." ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="441, 431, 24, 24" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;svg' idx='1' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;svg' type='' tag='svg' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABZSURBVEhL7dJBCgAgCETRLu3lvJwxrVpEqA2t5oO74JE14nMC6QmkJ5CewJW7h5ldB2cypW94Q7MYKq30hFYwVH7DHa1iqPVpAHUw1AJfEkhPID2B9D6DERPupAwH1QMnlwAAAABJRU5ErkJggg==" InformativeScreenshot="a76d0f3ce9bc5eb3b96a7b3d6169238d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image">
                             <uix:TargetAnchorable.Anchors>
@@ -1444,7 +1386,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
-                <uix:NClick sap2010:Annotation.AnnotationText="Selects dropdown menu." ClickType="Single" DisplayName="Click 'Buy Dropdown Menu'" sap:VirtualizedContainerService.HintSize="333.6,198.4" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick sap2010:Annotation.AnnotationText="Selects dropdown menu." ClickType="Single" DisplayName="Click 'Buy Dropdown Menu'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="307, 821, 393, 64" ElementType="InputBox" FriendlyName="'Buy'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='1' parentid='app' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' type='' parentid='app' tag='DIV' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYkAAABACAYAAADvTYt1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUfSURBVHhe7dzNK0VBGMdx/4o/wFI2VqzIhlgosZWsFCVZkCRJoaxYUnZYWSgi7CQlSZK3UJKSJC+Pnqkj1yVnNtNMz/fUTXKmmfk8Nz9zZtwS4UIAAQQQQOAPgRJkEEAAAQQQ+EuAkOC9gQACCCDwpwAhwZsDAQQQQICQ4D2AAAIIIOAvwErC34wWCCCAgBkBQsJMqZkoAggg4C9ASPib0QIBBBAwI0BImCk1E0UAAQT8BQgJfzNaIIAAAmYECAkzpWaiCCCAgL8AIeFvRgsEEEDAjAAhYabUTBQBBBDwFyAk/M1ogQACCJgRICTMlJqJIoAAAv4ChIS/GS0QQAABMwKEhJlSM1EEEEDAX4CQ8DejBQIIIGBGgJAwU2omigACCPgLEBL+ZrRAAAEEzAgQEmZKzUQRQAABfwFCwt+MFggggIAZAULCTKmZKAIIIOAvQEj4m9ECAQQQMCNQFBKTk5NSWlpa8KqurpahoSG5uLgwA8NEEUAAAQREfg2JtrY2ub+/dz4fHx9yfX0tw8PDUltbK4eHh7ghgAACCBgR+DckMoebmxtpbm6W6elpIzRMEwEEEEAgd0joykJXGPo4KrtOTk7c6mJxcbFA8vu9uhKZmZmRlpYWub29LbhPfzY1NSUdHR1UAgEEEEAgQoHcIXF+fi719fUFgZAnJHTO+oiqqqpKNjc3CwgeHh6kvb1dZmdnI6RhSAgggAAC/4bE+/u7nJ2dSU9Pj/uFfnd357WS0Jufnp6ku7tbRkdH5e3t7av9/v4++xy8BxFAAIGIBXKdbtLTTnV1dbKzsyMaGj6Pm7J7V1ZWpLGxUS4vL7/a6wqiq6tLHh8fIyZiaAgggIBdgX9XEkrz/Pws29vb0tTUJIODg25loFfex016r4aDhoSGhV4aDBoQCwsLdvWZOQIIIBC5QK6QyOawtbUl5eXlsru76x0S+phpfHxcBgYG5OXlxe1TaGgcHR1FTsTwEEAAAbsCXiHxc+Xgs5JQ4r29PWloaHArkLm5ObdPka1K7JaAmSOAAALxCniFxNramlRUVIhuOOuV/e/Ez9NJx8fHbkP6+3FZvT87zTQ/Py99fX1FR2fjZWJkCCCAgE2BXCGhf+2vrq66X/wTExPucZFe+nVkZMT9/8Tp6anb1NZHUfr9byGhbXQPQn+m+xu6ouBCAAEEEIhXINfppsrKSuns7JT19fWvgMimpEdie3t7paysTPS+sbExubq6kv7+/qKVhLbJHlFlexPx0jAyBBBAAIHgnwKbPaLKTjlRAgQQQACBeAWCh8TGxoa0trYWfURHvESMDAEEELArECQk9PirvnRDWz/DaWlpyX26LBcCCCCAQNwCQULi4ODA7VfU1NTI8vKyvL6+xq3C6BBAAAEEnECQkMAaAQQQQCBNAUIizboxagQQQCCIACERhJlOEEAAgTQFCIk068aoEUAAgSAChEQQZjpBAAEE0hQgJNKsG6NGAAEEgggQEkGY6QQBBBBIU4CQSLNujBoBBBAIIkBIBGGmEwQQQCBNAUIizboxagQQQCCIACERhJlOEEAAgTQFCIk068aoEUAAgSAChEQQZjpBAAEE0hQgJNKsG6NGAAEEgggQEkGY6QQBBBBIU4CQSLNujBoBBBAIIkBIBGGmEwQQQCBNAUIizboxagQQQCCIACERhJlOEEAAgTQFCIk068aoEUAAgSAChEQQZjpBAAEE0hQgJNKsG6NGAAEEgggQEkGY6QQBBBBIU+ATRd2BH9S6eCoAAAAASUVORK5CYII=" InformativeScreenshot="341fe18778f211c6486fc932124c1d77.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Buy" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='DIV' /&gt;" />
                   </uix:NClick.Target>
@@ -1454,7 +1396,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NClick>
-                <uix:NClick sap2010:Annotation.AnnotationText="Selects sell option." ClickType="Single" DisplayName="Click 'Sell'" sap:VirtualizedContainerService.HintSize="333.6,198.4" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick sap2010:Annotation.AnnotationText="Selects sell option." ClickType="Single" DisplayName="Click 'Sell'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="314, 892, 414, 54" FriendlyName="'Sell'" FullSelectorArgument="&lt;webctrl idx='1' parentid='list-item-496-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='list-item-496-1' tag='DIV' aaname='' check:text='Sell' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAaIAAAA6CAYAAADySV31AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAATESURBVHhe7dy/S5VtGAfw/hX/AAenlibFCHERRdBBmkRIkMLBH7Rkbm5uIk7NGemmhE4NLYqIikqIiog/BqPMJK+4HzjCyV49DnLDez43HAi89Trn0wVfnvu5nvMoLAIECBAgkFHgUcbaShMgQIAAgRBEmoAAAQIEsgoIoqz8ihMgQICAINIDBAgQIJBVQBBl5VecAAECBASRHiBAgACBrAKCKCu/4gQIECAgiPQAAQIECGQVEERZ+RUnQIAAAUGkBwgQIEAgq4AgysqvOAECBAgIIj1AgAABAlkFBFFWfsUJECBAQBDpAQIECBDIKiCIsvIrToAAAQKCSA8QIECAQFYBQZSVX3ECBAgQEER6gAABAgSyCjxoEJ2fn8fQ0FDxSv8urenp6Whqaort7e2sH15xAgQIEMgvcCOIzs7OYnJyMpqbm6OmpiaePHkS/f398fnz57i8vLzXOxZE9+KymQABAlUpUBZEx8fH0dPTE4ODg3F4eFiAfP/+Pebn56O1tTW+fPlyLyRBdC8umwkQIFCVAmVBNDc3F/X19bG2tnYD49evX3F1dXUvJEF0Ly6bCRAgUJUCZUE0MzMTjx8/jqWlpYow0hXU2NhYcXxXW1sbL168iJWVlevAEkQVMdpEgACBqhYoC6KNjY1obGwsjud2dnZuhfn69Wu0t7fHxMREpPtKv3//jk+fPhVDCMvLy8XvCqKq7i0fngABAhUJlAVROnr7+PFj1NXVFa83b97E5ubmjSO5i4uLGB0djeHh4bJpuPT7adBhZGQk0h5BVNH/gU0ECBCoaoF/jm/v7u4WIZTCKE3OpSuk1dXVa6i9vb1oa2uLdE/p7/Xhw4fo6uqK09NTQVTVreXDEyBAoDKBW58jSpNz4+PjRSCl+0Clqbn0/E86gksh9a+XIKoM3y4CBAgQiKjogdb19fUieEpHbqUgSsMNty1Hc1qMAAECBO4SqCiISoFSutI5OTmJ58+fF/eDbhvpFkR38fs5AQIECJQFUbry2d/fv6Hy7du3ePXq1fVX9aTwmZqais7Ozjg4OPhPRUGkwQgQIEDgLoHrIErDBS9fviyO4GZnZ4tvVEgrjWanEe2nT5+WfbPC0dFR8dxQX19fMeqdwintff/+/fVgw8+fP+P169cxMDAQP378uH4v6Ujv2bNnsbW1ddf783MCBAgQ+J8LlF0RpZHrhYWF6O3tLYYT0iBCQ0NDvH37NtIk3d8rhdW7d++ipaWlbG96xqi0FhcXi7+RHnxNzxqlla66uru7o6OjI1KgWQQIECBQvQIV3SOqXh6fnAABAgQeWkAQPbSwv0+AAAECtwoIIg1CgAABAlkFBFFWfsUJECBAQBDpAQIECBDIKiCIsvIrToAAAQKCSA8QIECAQFYBQZSVX3ECBAgQEER6gAABAgSyCgiirPyKEyBAgIAg0gMECBAgkFVAEGXlV5wAAQIEBJEeIECAAIGsAoIoK7/iBAgQICCI9AABAgQIZBUQRFn5FSdAgAABQaQHCBAgQCCrgCDKyq84AQIECAgiPUCAAAECWQUEUVZ+xQkQIEBAEOkBAgQIEMgqIIiy8itOgAABAoJIDxAgQIBAVgFBlJVfcQIECBAQRHqAAAECBLIK/AE+SWtDPsSZ7AAAAABJRU5ErkJggg==" InformativeScreenshot="7a663b1f39e35bab6b53ee0a1752b367.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Sell" TextMethod="AttributeText" TextSelector="&lt;webctrl type='' tag='DIV' /&gt;" />
                   </uix:NClick.Target>
@@ -1464,7 +1406,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NClick>
-                <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types the amount of stock it should sell." ClickBeforeMode="None" DisplayName="Type Into '0'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,259.2" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" Text="2">
+                <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types the amount of stock it should sell." ClickBeforeMode="None" DisplayName="Type Into '0'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,259" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" Text="2">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="793, 833, 239, 40" ElementType="InputBox" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='number' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='number' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPMAAAAsCAYAAACwno7FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJWSURBVHhe7ZvBikFhGIbdkKWdK7Ajd2DHJchCcgMuwNaS2CgLaykLJUoW5ApskPimc2pO/TGa5Tnv96ipaVbned7/SYczOeOFAQxIGMhJUACBAQwYMXMIMCBigJhFhgQDA8TMGcCAiAFiFhkSDAwQM2cAAyIGiFlkSDAwQMycAQyIGCBmkSHBwAAxcwYwIGKAmEWGBAMDxMwZwICIgbeYH4+HjcdjK5fLls/nrdFo2GazEcEFAwO6BoKYX6+X9ft9q9Vqdjwe7fl82mQysUqlYtvtVtcCZBgQMBDEfDqd4nfk+XyeoN3vd2u32/FP9DsvDGAgnQaCmKN34Wq1aufzObja2Wz28e/pROKqMODTQBBzr9ezer1ul8slsLFer61YLNpqtfJpCWoMZMBAEvPtdrNWq2XNZtOu12tw6YfDwUqlki0WiwwgcYkY8GkgiTkKOAr5W8yj0cinJagxkAEDSczRh1udTudrzMvlMgNIXCIGfBr41z1zdK9cKBS4Z/Z5RqDOiIEg5r8+tebT7IysyWW6NvDxe+bpdJpI+f2eudvt8j2z66MCfNoNvD0BNhgM4gdHdrtd/ATYcDiMnwDb7/dpZ+H6MODaAM9mu54feCUD/NeU0pqwuDZAzK7nB17JADErrQmLawPE7Hp+4JUMELPSmrC4NkDMrucHXskAMSutCYtrA8Tsen7glQwQs9KasLg2QMyu5wdeyQAxK60Ji2sDxOx6fuCVDBCz0pqwuDZAzK7nB17JADErrQmLawPE7Hp+4JUMELPSmrC4NkDMrucHXsnAD4fTG+p//JY1AAAAAElFTkSuQmCC" InformativeScreenshot="492fdd95b6f4c124cf2e148a1dea40a8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="0" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='INPUT' type='number' /&gt;" />
                   </uix:NTypeInto.Target>
@@ -1474,7 +1416,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NTypeInto>
-                <uix:NClick sap2010:Annotation.AnnotationText="Previews order to sell." ClickType="Single" DisplayName="Click 'Preview Order'" sap:VirtualizedContainerService.HintSize="333.6,198.4" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick sap2010:Annotation.AnnotationText="Previews order to sell." ClickType="Single" DisplayName="Click 'Preview Order'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="677, 906, 293, 30" FriendlyName="'Preview Order'" FullSelectorArgument="&lt;webctrl aaname='           Preview Order           ' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='           Preview Order           ' tag='SPAN' type='' check:text='Preview Order' /&gt;" ImageBase64="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" InformativeScreenshot="7ed475c5e182b83b2187f5ad61811c23.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Preview Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;" />
                   </uix:NClick.Target>
@@ -1484,7 +1426,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NClick>
-                <uix:NClick sap2010:Annotation.AnnotationText="Confirms and complete sales." ClickType="Single" DisplayName="Click 'Submit Order'" sap:VirtualizedContainerService.HintSize="333.6,198.4" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                <uix:NClick sap2010:Annotation.AnnotationText="Confirms and complete sales." ClickType="Single" DisplayName="Click 'Submit Order'" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="1030, 884, 315, 30" FriendlyName="'Submit Order'" FullSelectorArgument="&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' type='' check:text='Submit Order' /&gt;" ImageBase64="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" InformativeScreenshot="7ead92919d7e2ef1f8abb1035844a967.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Submit Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;" />
                   </uix:NClick.Target>
@@ -1498,7 +1440,7 @@
             </ActivityAction>
           </uix:NApplicationCard.Body>
           <uix:NApplicationCard.TargetApp>
-            <uix:TargetApp BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIQSURBVDhPY2BAA8aWwRqGlmFtRlZhZ42sw54D6XfGlmH3gHi6oU24Prp6ON/SMpQTqKEfqOE3EP/Hgf8ZWoVPU/H0ZEcxSFs7lM3QKmwruiZfl8ini9OTDtrZh39BkbMO245iiLFVeC82G+83ZBz735Pzf31OygF0eaCFE8GuMLEK18Hl7PKw2FMvmrNOh3tE3cZiwT9D21AtBqC/u7HZbukY8627f8ExU9tIPGESPoEBqPkyugHVDZNO//r169F/IHj95v1pXIFqYht+DmTAJ5gC/7C8x89fvDkF0ggDHz58voDNgJqGyad//vx1DWTAZxObiD/LV28/8O/fv08gjX/+/Hm0Z/+J/SD2g4dPjyIb4Oab9urOvUdHgFL/gPgLQ15J+6Zv375fh9r448Dh0/tB/m/tmnUCJHbs5EVwDIAsWbpi60GgJR9A4r9+/XkIDKOVDEB2N0jg2fPXB32Cs+/CbFu2cttBkPjKtdsPFFf2XP/x89cDqCWf1m/au83MLvK7kRUwED9//qzdN2nhEXR/Hj527gBIw/fvP24Cqb+wAA2OKnoAVfsXlATAaQEoMAvdgDt3Hx+FBSQwTO5U1U88iKzG2CpsEmo+sAo7jKygrKb/LNCf90FhYOsch5qUrcJ2gJI/Sn4AZyaIS/7iyUx/jSzDJ2NoRjYJ5C+Q86AJ7B0oOwPxHVB2hvsZSQMAaJffflK2NTUAAAAASUVORK5CYII=" InformativeScreenshot="579ed9cfb6f2d6ad30c6dcd79695e9be.png" Selector="&lt;html app='msedge.exe' title='Portfolio - Investopedia Stock Simulator'/&gt;" Url="https://www.investopedia.com/simulator/portfolio" />
+            <uix:TargetApp BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAAIQSURBVDhPY2BAA8aWwRqGlmFtRlZhZ42sw54D6XfGlmH3gHi6oU24Prp6ON/SMpQTqKEfqOE3EP/Hgf8ZWoVPU/H0ZEcxSFs7lM3QKmwruiZfl8ini9OTDtrZh39BkbMO245iiLFVeC82G+83ZBz735Pzf31OygF0eaCFE8GuMLEK18Hl7PKw2FMvmrNOh3tE3cZiwT9D21AtBqC/u7HZbukY8627f8ExU9tIPGESPoEBqPkyugHVDZNO//r169F/IHj95v1pXIFqYht+DmTAJ5gC/7C8x89fvDkF0ggDHz58voDNgJqGyad//vx1DWTAZxObiD/LV28/8O/fv08gjX/+/Hm0Z/+J/SD2g4dPjyIb4Oab9urOvUdHgFL/gPgLQ15J+6Zv375fh9r448Dh0/tB/m/tmnUCJHbs5EVwDIAsWbpi60GgJR9A4r9+/XkIDKOVDEB2N0jg2fPXB32Cs+/CbFu2cttBkPjKtdsPFFf2XP/x89cDqCWf1m/au83MLvK7kRUwED9//qzdN2nhEXR/Hj527gBIw/fvP24Cqb+wAA2OKnoAVfsXlATAaQEoMAvdgDt3Hx+FBSQwTO5U1U88iKzG2CpsEmo+sAo7jKygrKb/LNCf90FhYOsch5qUrcJ2gJI/Sn4AZyaIS/7iyUx/jSzDJ2NoRjYJ5C+Q86AJ7B0oOwPxHVB2hvsZSQMAaJffflK2NTUAAAAASUVORK5CYII=" InformativeScreenshot="9f5f0b5075c8a433182a8ec66f6ab6db.png" Selector="&lt;html app='msedge.exe' title='Stocks Trade - Investopedia Stock Simulator'/&gt;" Url="https://www.investopedia.com/simulator/trade/stocks" />
           </uix:NApplicationCard.TargetApp>
         </uix:NApplicationCard>
       </Sequence>
