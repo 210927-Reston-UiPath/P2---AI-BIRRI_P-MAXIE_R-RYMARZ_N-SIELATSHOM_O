@@ -70,7 +70,7 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Buy Stock" sap:VirtualizedContainerService.HintSize="897,1874" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="stockAvailable" />
+      <Variable x:TypeArguments="x:Boolean" Name="stockNotAvailable" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -83,7 +83,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'StocksTra Page'" sap:VirtualizedContainerService.HintSize="813,838" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="0854f5a0e0f6bcf01e61bf40d5bfd500" Selector="&lt;html app='chrome.exe' title='* - Investopedia Stock Simulator' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'StocksTra Page'" sap:VirtualizedContainerService.HintSize="813,838" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="0854f5a0e0f6bcf01e61bf40d5bfd500" Selector="&lt;html app='chrome.exe' title='* - Investopedia Stock Simulator' /&gt;" TimeoutMS="3000">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -140,7 +140,7 @@
               </ui:Click>
               <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="InjectJsScript_1" ScriptCode="()=&gt;document.querySelector('.show-max-field').children[0].classList.contains('v-input--is-disabled')">
                 <ui:InjectJsScript.ScriptOutput>
-                  <OutArgument x:TypeArguments="x:Boolean">[stockAvailable]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean">[stockNotAvailable]</OutArgument>
                 </ui:InjectJsScript.ScriptOutput>
                 <ui:InjectJsScript.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d76bb07d-4cd8-4620-9253-6d1fed511e1a" InformativeScreenshot="839ee2292e6bb9f6c0cf08b2572f2dfe" Selector="&lt;webctrl aaname=' ' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='app' tag='DIV' /&gt;">
@@ -157,7 +157,7 @@
           </ActivityAction>
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
-      <If Condition="[stockAvailable = False]" sap:VirtualizedContainerService.HintSize="813,812" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[stockNotAvailable = False]" sap:VirtualizedContainerService.HintSize="813,812" sap2010:WorkflowViewState.IdRef="If_1">
         <If.Then>
           <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'StocksTra Page'" sap:VirtualizedContainerService.HintSize="434,664" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="0854f5a0e0f6bcf01e61bf40d5bfd500" Selector="&lt;html app='chrome.exe' title='* - Investopedia Stock Simulator' /&gt;">
             <ui:BrowserScope.Body>
