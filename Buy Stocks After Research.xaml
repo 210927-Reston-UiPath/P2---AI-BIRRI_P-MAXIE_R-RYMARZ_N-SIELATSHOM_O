@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1161,1369</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,1241</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Buy_Stocks_After_Research_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -71,10 +71,10 @@
       <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Buy_Stocks_After_Research" sap:VirtualizedContainerService.HintSize="733,1304" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Buy_Stocks_After_Research" sap:VirtualizedContainerService.HintSize="655,1136" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="db" />
-      <Variable x:TypeArguments="sd:DataTable" Name="tradehistory" />
+      <Variable x:TypeArguments="sd:DataTable" Name="buyHistory" />
       <Variable x:TypeArguments="x:String" Name="str" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -82,80 +82,63 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:DatabaseConnect DatabaseConnection="[db]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="691,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=tcp:007bb.database.windows.net;Initial Catalog=007BB;User ID=AD007;Password=YAJ8vkU25JCH8dy" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="691,760" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="655,682" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[stocks]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="613,590" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-            <ui:ForEachRow.Body>
-              <ActivityAction x:TypeArguments="sd:DataRow">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,443" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:DatabaseConnect DatabaseConnection="[db]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="613,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=tcp:007bb.database.windows.net;Initial Catalog=007BB;User ID=AD007;Password=YAJ8vkU25JCH8dy" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="613,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;select * from TRADEHISTORY where buy/sell = 'buy' and date &gt; &quot; + date.today.toString]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[buyHistory]" DisplayName="Execute Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="613,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="[&quot;select * from TRADEHISTORY where 'date/time' &gt; '&quot; + date.today.toString +&quot;'&quot;]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[stocks]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="613,654" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,506" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="idx" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[buyHistory]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Stock" LookupValue="[cstr(row(&quot;stock&quot;))]" RowIndex="[idx]" />
+            <If Condition="[idx &lt; 0]" sap:VirtualizedContainerService.HintSize="521,352" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Double" Name="total" />
+                    <Variable x:TypeArguments="x:Double" Name="price" />
+                    <Variable x:TypeArguments="x:Int32" Default="1" Name="quantity" />
+                    <Variable x:TypeArguments="x:Double" Name="commision" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[cstr(row(&quot;Rating&quot;)) = &quot;Strong Buy&quot;]" sap:VirtualizedContainerService.HintSize="521,351" sap2010:WorkflowViewState.IdRef="If_1">
-                    <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:Double" Name="total" />
-                          <Variable x:TypeArguments="x:Double" Name="price" />
-                          <Variable x:TypeArguments="x:Int32" Default="1" Name="quantity" />
-                          <Variable x:TypeArguments="x:Double" Name="commision" />
-                        </Sequence.Variables>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BuyStock workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="BuyStock.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="stock">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="cstr(row(&quot;STOCK&quot;))" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="quantity">
-                              <Literal x:TypeArguments="x:Int32" Value="1" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Double" x:Key="total">
-                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="total" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="x:Double" x:Key="price">
-                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="price" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="x:Double" x:Key="commision">
-                              <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="commision" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="db">
-                              <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="db" />
-                            </InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
-                      </Sequence>
-                    </If.Then>
-                  </If>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BuyStock workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="BuyStock.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="stock">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="cstr(row(&quot;STOCK&quot;))" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="quantity">
+                        <Literal x:TypeArguments="x:Int32" Value="1" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="db">
+                        <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="db" />
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                 </Sequence>
-              </ActivityAction>
-            </ui:ForEachRow.Body>
-          </ui:ForEachRow>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[tradehistory]" DisplayName="Execute Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="691,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="select * from TRADEHISTORY">
-      <ui:ExecuteQuery.Parameters>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:ExecuteQuery.Parameters>
-    </ui:ExecuteQuery>
-    <ui:OutputDataTable DataTable="[tradehistory]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="691,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[str]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="691,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[str]" />
-    <ui:DatabaseDisconnect DatabaseConnection="[db]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="691,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+              </If.Then>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:DatabaseDisconnect DatabaseConnection="[db]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="613,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
   </Sequence>
 </Activity>

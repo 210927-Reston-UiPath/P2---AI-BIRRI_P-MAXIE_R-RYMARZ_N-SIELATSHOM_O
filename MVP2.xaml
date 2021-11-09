@@ -1,14 +1,15 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.stock1="Ello" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="stock1" Type="InArgument(x:String)" />
+    <x:Property Name="db" Type="InArgument(ui:DatabaseConnection)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1161,3557</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,4519</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="44">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -51,10 +52,12 @@
       <x:String>UiPath.OCR.Contracts</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -85,21 +88,29 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="777,3452" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="819,4414" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Portfolio - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="735,3360" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Portfolio - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="777,4322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="701,3144" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="743,4106" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="stockNotAvailable" />
               <Variable x:TypeArguments="x:Boolean" Name="purchaseExists" />
@@ -109,7 +120,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="659,1126" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="1.00:00:00">
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="701,1126" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="1.00:00:00">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,952" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -173,15 +184,15 @@
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
             </ui:RetryScope>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="659,1884" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="701,2846" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="621,1657" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence sap:VirtualizedContainerService.HintSize="663,2619" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[stockNotAvailable]" sap:VirtualizedContainerService.HintSize="579,265" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[stockNotAvailable]" sap:VirtualizedContainerService.HintSize="621,265" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="242,116" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
@@ -193,7 +204,7 @@
                       </Sequence>
                     </If.Then>
                   </If>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="579,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -215,7 +226,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Selects sell option." ClickType="Single" DisplayName="Click 'Sell'" sap:VirtualizedContainerService.HintSize="579,197" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Selects sell option." ClickType="Single" DisplayName="Click 'Sell'" sap:VirtualizedContainerService.HintSize="621,197" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="114, 470, 363, 48" FriendlyName="'Sell'" FullSelectorArgument="&lt;webctrl aria-role='option' id='list-item-1064-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' id='list-item-1064-1' tag='DIV' type='' aaname='' check:text='Sell' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAW8AAAA0CAYAAABFArmUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVHhe7dq/K+5RHMDx+6/YLSaLzWJVspDFYjGJSBZsZGC2mZSSSZRdWZXCw02SQYn8SDj3nsN1C/d7u/U8dT95verT4zgP47vT+X6/1Wq1tLe3l2rf740xxvznU3r9s9vibYwxgeZDvAH4/4k3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAME1JB4Pz4+prW1tdTZ2ZmamprK59LSUrq5uXn9RrXDw8PU19dXPj9bA3x1DYl3DvfAwEA6PT0t6/Pz8zQzM5N2dnbK+m/EG6Ba3eN9f3+fJiYm0srKyutv/p14A1Sre7zzlcnc3FwaGxurvCY5OTlJIyMjqbm5OXV0dJTTev7bTLwBqtU93tn+/n655+7u7k5bW1vp7u7udedFDneOcd57enpKl5eX5bS+sbFR9sUboFpD4p1dXFykhYWF1NLS8uFkvbi4WPaen5/LOtve3k5TU1Pp4eFBvAH+omHx/uX6+rrEurW1tQQ8m5+fL2+hvJ/x8fFyShdvgGoNj3eWT9j5VcHR0dF0e3tb4p2D/ifiDVCt7vHOob66unpd/ba6uvoW783NzTQ0NFRO5Z8Rb4BqdY93DmxXV1daXl4ucc4xPzo6Sv39/W/XJvkB5eDgYDmB5zdS8l347u5uOjs7K/v5f/T29qaDg4NP1wBfXd3jneW3Saanp1N7e3u5y+7p6Unr6+tvDyyz/EBzdnY2tbW1lYeak5OT6fj4uOzloOe3T4aHh8vP79cAX11D4g1AY4k3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRDQS7xr6QfXRk+zS9XfNwAAAABJRU5ErkJggg==" InformativeScreenshot="23b555508df79662fc31dc692417ad46.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Sell" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='DIV' type='' /&gt;" />
                     </uix:NClick.Target>
@@ -225,7 +236,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="579,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -247,7 +258,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Previews order to sell." ClickType="Single" DisplayName="Click 'Preview Order'" sap:VirtualizedContainerService.HintSize="579,197" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Previews order to sell." ClickType="Single" DisplayName="Click 'Preview Order'" sap:VirtualizedContainerService.HintSize="621,197" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="420, 658, 234, 24" FriendlyName="'Preview Order'" FullSelectorArgument="&lt;webctrl aaname='           Preview Order           ' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='           Preview Order           ' tag='SPAN' type='' check:text='Preview Order' /&gt;" ImageBase64="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" InformativeScreenshot="2d7c563adb665161f6caf35e4dc9c5a7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Preview Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;" />
                     </uix:NClick.Target>
@@ -257,7 +268,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[purchaseExists]" sap:VirtualizedContainerService.HintSize="579,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[purchaseExists]" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="23da97e1-648c-47eb-9cbf-328b3afd96d0" InformativeScreenshot="28d63d11b78709603e893fbaebe3943d" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xA;&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' /&gt;&#xA;">
                         <ui:Target.TimeoutMS>
@@ -269,24 +280,105 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[purchaseExists]" sap:VirtualizedContainerService.HintSize="579,346" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[purchaseExists]" sap:VirtualizedContainerService.HintSize="621,1309" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <uix:NClick sap2010:Annotation.AnnotationText="Confirms and complete sales." ClickType="Single" DisplayName="Click 'Submit Order'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
-                        <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="702, 620, 252, 24" FriendlyName="'Submit Order'" FullSelectorArgument="&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' type='' check:text='Submit Order' /&gt;" ImageBase64="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" InformativeScreenshot="d4a421bf9481d0976fb82269356eb870.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Submit Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target DesignTimeRectangle="686, 608, 284, 48" ElementType="Button" FriendlyName="'Submit Order'" FullSelectorArgument="&lt;webctrl aaname='               Submit Order               ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='               Submit Order               ' tag='BUTTON' type='button' check:text='Submit Order' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" Text="Submit Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='BUTTON' type='button' /&gt;" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:NClick.Target>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,1160" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="priceText" />
+                          <Variable x:TypeArguments="x:String" Name="quantityText" />
+                          <Variable x:TypeArguments="x:String" Name="totalText" />
+                          <Variable x:TypeArguments="x:Double" Name="price" />
+                          <Variable x:TypeArguments="x:Double" Name="total" />
+                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </uix:NClick>
+                        <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_1">
+                          <ui:GetFullText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f5d7aaa3-f7a4-4df6-b779-0f649f3ac601" InformativeScreenshot="52f659a29f51bbea42473593430c5acd" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xD;&#xA;&lt;webctrl aaname='Estimated Price' parentid='app' tag='DIV' /&gt;&#xD;&#xA;&lt;nav up='1' /&gt;&#xD;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xD;&#xA;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetFullText.Target>
+                          <ui:GetFullText.Text>
+                            <OutArgument x:TypeArguments="x:String">[priceText]</OutArgument>
+                          </ui:GetFullText.Text>
+                        </ui:GetFullText>
+                        <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_2">
+                          <ui:GetFullText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84fcf3e0-8b4f-4e50-9327-8f7004fdde8c" InformativeScreenshot="36e2146f51307db03141fc17eb5b0a8b" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xD;&#xA;&lt;webctrl aaname='Quantity' parentid='app' tag='DIV' /&gt;&#xD;&#xA;&lt;nav up='1' /&gt;&#xD;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xD;&#xA;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetFullText.Target>
+                          <ui:GetFullText.Text>
+                            <OutArgument x:TypeArguments="x:String">[quantityText]</OutArgument>
+                          </ui:GetFullText.Text>
+                        </ui:GetFullText>
+                        <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_3">
+                          <ui:GetFullText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4fe7e80a-abd5-41f4-bfeb-285ff87d1bc5" InformativeScreenshot="2b4ab8314d0c799e5e37d82fd79128ef" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xD;&#xA;&lt;webctrl aaname='Estimated Total' parentid='app' tag='DIV' /&gt;&#xD;&#xA;&lt;nav up='1' /&gt;&#xD;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xD;&#xA;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetFullText.Target>
+                          <ui:GetFullText.Text>
+                            <OutArgument x:TypeArguments="x:String">[totalText]</OutArgument>
+                          </ui:GetFullText.Text>
+                        </ui:GetFullText>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Double">[price]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Double">[cdbl(priceText.replace("$",""))]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Double">[total]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Double">[cdbl(totalText.replace("$",""))]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <uix:NClick sap2010:Annotation.AnnotationText="Confirms and complete sales." ClickType="Single" DisplayName="Click 'Submit Order'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="702, 620, 252, 24" FriendlyName="'Submit Order'" FullSelectorArgument="&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' type='' check:text='Submit Order' /&gt;" ImageBase64="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" InformativeScreenshot="d4a421bf9481d0976fb82269356eb870.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Submit Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="686, 608, 284, 48" ElementType="Button" FriendlyName="'Submit Order'" FullSelectorArgument="&lt;webctrl aaname='               Submit Order               ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='               Submit Order               ' tag='BUTTON' type='button' check:text='Submit Order' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" Text="Submit Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='BUTTON' type='button' /&gt;" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;insert into TRADEHISTORY  values ('&quot; + date.now.ToString + &quot;','&quot; + stock1 + &quot;',&quot; + quantityText.replace(&quot;,&quot;,&quot;&quot;) + &quot;,&quot; + cstr(price) + &quot;,&quot; + cstr(total) + &quot;, 0,&quot; +&quot; 'sell')&quot;]" />
+                        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;insert into TRADEHISTORY  values ('&quot; + date.now.ToString + &quot;','&quot; + stock1 + &quot;',&quot; + quantityText.replace(&quot;,&quot;,&quot;&quot;) + &quot;,&quot; + cstr(price) + &quot;,&quot; + cstr(total) + &quot;, 0,&quot; +&quot; 'sell')&quot;]">
+                          <ui:ExecuteNonQuery.Parameters>
+                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                          </ui:ExecuteNonQuery.Parameters>
+                        </ui:ExecuteNonQuery>
+                      </Sequence>
                     </If.Then>
                     <If.Else>
                       <Throw Exception="[new BusinessRuleException(&quot;Cannot sell &quot; + stock1)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
@@ -295,7 +387,7 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="625,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="667,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>

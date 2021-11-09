@@ -2,9 +2,6 @@
   <x:Members>
     <x:Property Name="stock" Type="InArgument(x:String)" />
     <x:Property Name="quantity" Type="InArgument(x:Int32)" />
-    <x:Property Name="total" Type="OutArgument(x:Double)" />
-    <x:Property Name="price" Type="OutArgument(x:Double)" />
-    <x:Property Name="commision" Type="OutArgument(x:Double)" />
     <x:Property Name="db" Type="InArgument(ui:DatabaseConnection)" />
   </x:Members>
   <sap:VirtualizedContainerService.HintSize>1161,3390</sap:VirtualizedContainerService.HintSize>
@@ -246,6 +243,9 @@
                           <Variable x:TypeArguments="x:String" Name="p" />
                           <Variable x:TypeArguments="x:String" Name="t" />
                           <Variable x:TypeArguments="x:String" Name="c" />
+                          <Variable x:TypeArguments="x:Double" Name="price" />
+                          <Variable x:TypeArguments="x:Double" Name="total" />
+                          <Variable x:TypeArguments="x:Double" Name="commision" />
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -284,7 +284,7 @@
                         </ui:GetFullText>
                         <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_3">
                           <ui:GetFullText.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49698237-a6bd-442e-9577-098196a68a6e" InformativeScreenshot="927593aa5e35a50c256bd844fdaac88a" Selector="&lt;webctrl aaname='Commission' parentid='app' tag='DIV' /&gt;&#xD;&#xA;&lt;nav up='1' /&gt;&#xD;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xD;&#xA;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49698237-a6bd-442e-9577-098196a68a6e" InformativeScreenshot="927593aa5e35a50c256bd844fdaac88a" Selector="&lt;webctrl aaname='Commission' parentid='app' tag='DIV' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xA;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
