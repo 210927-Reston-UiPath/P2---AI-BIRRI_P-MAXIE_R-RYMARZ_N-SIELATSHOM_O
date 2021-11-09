@@ -1,8 +1,9 @@
 {
   "name": "P2---AI-BIRRI_P-MAXIE_R-RYMARZ_N-SIELATSHOM_O",
   "description": "Blank Process",
-  "main": "P2-ScrapeResearch&ScrapePortfolio.xaml",
+  "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Database.Activities": "[1.4.0]",
     "UiPath.Excel.Activities": "[2.9.5]",
     "UiPath.Mail.Activities": "[1.9.5]",
     "UiPath.System.Activities": "[20.10.4]",
@@ -44,6 +45,12 @@
     {
       "filePath": "P2-ScrapeResearch&ScrapePortfolio.xaml",
       "uniqueId": "5fa390f5-1eed-410e-bc81-502d59a7fa4a",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "a9db9ad5-af58-4f59-bdea-6fcddd849f50",
       "input": [],
       "output": []
     }
