@@ -129,7 +129,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick sap2010:Annotation.AnnotationText="Goes to trade option after getting stocks it should sell." ClickType="Single" DisplayName="Click 'trade'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick sap2010:Annotation.AnnotationText="Goes to trade option after getting stocks it should sell." ClickType="Single" DelayBefore="2" DisplayName="Click 'trade'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="263, 175, 127, 48" ElementType="Text" FriendlyName="'trade'" FullSelectorArgument="&lt;webctrl aaname='             trade           ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='             trade           ' tag='A' type='' check:text='trade' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAA0CAYAAACpUourAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMxSURBVHhe7ZrPaxpBFMfzN/XYv2PpzX8gZ8FbyUnYYy8S0l4CTYRiQUKKJGQPsSA2YEoQFEmQiBgqEiJiIqyB13Ez83b2lxU1ujXfBx+QeTPuZvez82bHbL17/4EAmAAZAMMyGIkUeINABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsDEUIZjqj7STDGsHTtj9mtPsiUYw/suVQpZ2g4cx+XoVname/pphvcxDm5oKHsF4nlMw16Lyvnw40w7PxXt8+C4VRNDGfJU6Y3JHrlwiIuut3cv884Y/WJz3pYNToi+pZzvOJJkiZrPspuI7q+98H66DLZ2Hp7jiNSfKn1JeseGnp+P5pl3zDqIoQx+3JlCzQR+3IvdJUtr305bVB3I1CTnu0lOn9OOzMvoVWnH18eBZXii6oEv9zFHhdqAlBf23QWltXzU+cWNjZbBId+SN2lMjbwvlzDJunOSRJMn1PkwoMquv59gmgySzKUyTzzpBZPbIcPSWFAGbXoP1GXztxihckVqjF4+P1yFlJQZZDASFn8HidlBrR8gw9JYTAa3DIibmPXmdkr3MifGiRLy/VquT/p1ymj9HGaSIUVW2+kk1jcdOpJtkGFpzCvDJ0p/q1JXFfLHG9rXxhiJPSr3ZE49xVxSQm74jDKEnYvbFhbxEWTDZIgIW6wDsm4Nd9it04NMt89Vzp3m7caJt/+SZAi+SXSooI1fJxsnA19kNSOIBWE5ExyTuVKLPXHTtLcMLhWjFh1q/VEmYsGcZcK8oLbcP7CvLd9mUI4q/ZdcdPjePrCAjAPzLyDddlEmPmtj+Mb+I26LIWOiZcCr5aszvwxGskhNVS7Ek6o2kw4bshSIqbwQshHFJUTPT5MBm06rYgEZBPrT2shPntaT6EWiQtt/aJ7KJ1yfTV5hO1ptra+TjZfBSGp1vF+nrz867k6jXjo8mFRQP16p2j+ttCzhh6qov22V/AcygFUBGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQDjkUH+0w0CQVthtoC3SIr+Aq/hUKFRq0kRAAAAAElFTkSuQmCC" InformativeScreenshot="8ac49f6640b0fdb0433fa295d3e3c9fb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="trade" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
                       </uix:NClick.Target>
@@ -297,7 +297,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_1">
                           <ui:GetFullText.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f5d7aaa3-f7a4-4df6-b779-0f649f3ac601" InformativeScreenshot="52f659a29f51bbea42473593430c5acd" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xD;&#xA;&lt;webctrl aaname='Estimated Price' parentid='app' tag='DIV' /&gt;&#xD;&#xA;&lt;nav up='1' /&gt;&#xD;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xD;&#xA;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f5d7aaa3-f7a4-4df6-b779-0f649f3ac601" InformativeScreenshot="52f659a29f51bbea42473593430c5acd" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xA;&lt;webctrl aaname='Estimated Price' parentid='app' tag='DIV' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xA;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -312,7 +312,7 @@
                         </ui:GetFullText>
                         <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_2">
                           <ui:GetFullText.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84fcf3e0-8b4f-4e50-9327-8f7004fdde8c" InformativeScreenshot="36e2146f51307db03141fc17eb5b0a8b" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xD;&#xA;&lt;webctrl aaname='Quantity' parentid='app' tag='DIV' /&gt;&#xD;&#xA;&lt;nav up='1' /&gt;&#xD;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xD;&#xA;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84fcf3e0-8b4f-4e50-9327-8f7004fdde8c" InformativeScreenshot="36e2146f51307db03141fc17eb5b0a8b" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xA;&lt;webctrl aaname='Quantity' parentid='app' tag='DIV' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xA;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -327,7 +327,7 @@
                         </ui:GetFullText>
                         <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_3">
                           <ui:GetFullText.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4fe7e80a-abd5-41f4-bfeb-285ff87d1bc5" InformativeScreenshot="2b4ab8314d0c799e5e37d82fd79128ef" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xD;&#xA;&lt;webctrl aaname='Estimated Total' parentid='app' tag='DIV' /&gt;&#xD;&#xA;&lt;nav up='1' /&gt;&#xD;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xD;&#xA;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4fe7e80a-abd5-41f4-bfeb-285ff87d1bc5" InformativeScreenshot="2b4ab8314d0c799e5e37d82fd79128ef" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xA;&lt;webctrl aaname='Estimated Total' parentid='app' tag='DIV' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;webctrl parentid='app' tag='DIV' idx='2' /&gt;&#xA;">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>

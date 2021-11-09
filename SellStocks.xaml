@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1161,1471</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,1303</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SellStocks_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -70,7 +70,7 @@
       <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SellStocks" sap:VirtualizedContainerService.HintSize="733,1366" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SellStocks" sap:VirtualizedContainerService.HintSize="733,1198" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="sellHistory" />
       <Variable x:TypeArguments="x:String" Name="str" />
@@ -87,60 +87,45 @@
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
     </ui:ExecuteQuery>
-    <ui:OutputDataTable DataTable="[sellHistory]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="691,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[str]" />
+    <ui:OutputDataTable DataTable="[stocks]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="691,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[str]" />
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="691,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[str]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="691,822" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="655,744" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Stocks]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="613,652" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-            <ui:ForEachRow.Body>
-              <ActivityAction x:TypeArguments="sd:DataRow">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,505" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:Int32" Name="idx" />
-                  </Sequence.Variables>
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Stocks]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="691,654" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,506" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="idx" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[sellHistory]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Stock" LookupValue="[cstr(row(&quot;symbol&quot;))]" RowIndex="[idx]" />
+            <If Condition="[idx &lt; 0]" sap:VirtualizedContainerService.HintSize="521,352" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[sellHistory]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Stock" LookupValue="[cstr(row(&quot;symbol&quot;))]" RowIndex="[idx]" />
-                  <If Condition="[idx &lt; 0]" sap:VirtualizedContainerService.HintSize="521,351" sap2010:WorkflowViewState.IdRef="If_1">
-                    <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MVP2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="MVP2.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="stock1">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="cstr(row(&quot;Symbol&quot;))" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="db">
-                              <mva:VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="db" />
-                            </InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
-                      </Sequence>
-                    </If.Then>
-                  </If>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MVP2 workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="MVP2.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="stock1">[cstr(row("Symbol"))]</InArgument>
+                      <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="db">[db]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                 </Sequence>
-              </ActivityAction>
-            </ui:ForEachRow.Body>
-          </ui:ForEachRow>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
+              </If.Then>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
     <ui:DatabaseDisconnect DatabaseConnection="[db]" DisplayName="Disconnect" sap:VirtualizedContainerService.HintSize="691,22" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
   </Sequence>
 </Activity>
