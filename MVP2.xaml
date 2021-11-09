@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.stock1="Ello" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.stock1="shit" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="stock1" Type="InArgument(x:String)" />
     <x:Property Name="db" Type="InArgument(ui:DatabaseConnection)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1161,4519</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,2217</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -98,19 +98,19 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="819,4414" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="552,2112" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Portfolio - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="777,4322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Portfolio - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="510,2020" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="743,4106" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1804" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="stockNotAvailable" />
               <Variable x:TypeArguments="x:Boolean" Name="purchaseExists" />
@@ -120,7 +120,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="701,1126" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="1.00:00:00">
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="434,1126" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="1.00:00:00">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,952" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -129,7 +129,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick sap2010:Annotation.AnnotationText="Goes to trade option after getting stocks it should sell." ClickType="Single" DelayBefore="2" DisplayName="Click 'trade'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                    <uix:NClick sap2010:Annotation.AnnotationText="Goes to trade option after getting stocks it should sell." ClickType="Single" DelayAfter="2" DelayBefore="2" DisplayName="Click 'trade'" sap:VirtualizedContainerService.HintSize="334,197" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="263, 175, 127, 48" ElementType="Text" FriendlyName="'trade'" FullSelectorArgument="&lt;webctrl aaname='             trade           ' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='             trade           ' tag='A' type='' check:text='trade' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAA0CAYAAACpUourAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMxSURBVHhe7ZrPaxpBFMfzN/XYv2PpzX8gZ8FbyUnYYy8S0l4CTYRiQUKKJGQPsSA2YEoQFEmQiBgqEiJiIqyB13Ez83b2lxU1ujXfBx+QeTPuZvez82bHbL17/4EAmAAZAMMyGIkUeINABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsBABsDEUIZjqj7STDGsHTtj9mtPsiUYw/suVQpZ2g4cx+XoVname/pphvcxDm5oKHsF4nlMw16Lyvnw40w7PxXt8+C4VRNDGfJU6Y3JHrlwiIuut3cv884Y/WJz3pYNToi+pZzvOJJkiZrPspuI7q+98H66DLZ2Hp7jiNSfKn1JeseGnp+P5pl3zDqIoQx+3JlCzQR+3IvdJUtr305bVB3I1CTnu0lOn9OOzMvoVWnH18eBZXii6oEv9zFHhdqAlBf23QWltXzU+cWNjZbBId+SN2lMjbwvlzDJunOSRJMn1PkwoMquv59gmgySzKUyTzzpBZPbIcPSWFAGbXoP1GXztxihckVqjF4+P1yFlJQZZDASFn8HidlBrR8gw9JYTAa3DIibmPXmdkr3MifGiRLy/VquT/p1ymj9HGaSIUVW2+kk1jcdOpJtkGFpzCvDJ0p/q1JXFfLHG9rXxhiJPSr3ZE49xVxSQm74jDKEnYvbFhbxEWTDZIgIW6wDsm4Nd9it04NMt89Vzp3m7caJt/+SZAi+SXSooI1fJxsnA19kNSOIBWE5ExyTuVKLPXHTtLcMLhWjFh1q/VEmYsGcZcK8oLbcP7CvLd9mUI4q/ZdcdPjePrCAjAPzLyDddlEmPmtj+Mb+I26LIWOiZcCr5aszvwxGskhNVS7Ek6o2kw4bshSIqbwQshHFJUTPT5MBm06rYgEZBPrT2shPntaT6EWiQtt/aJ7KJ1yfTV5hO1ptra+TjZfBSGp1vF+nrz867k6jXjo8mFRQP16p2j+ttCzhh6qov22V/AcygFUBGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQADGQDjkUH+0w0CQVthtoC3SIr+Aq/hUKFRq0kRAAAAAElFTkSuQmCC" InformativeScreenshot="8ac49f6640b0fdb0433fa295d3e3c9fb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="trade" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
                       </uix:NClick.Target>
@@ -184,9 +184,9 @@
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
             </ui:RetryScope>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="701,2846" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,544" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="663,2619" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence sap:VirtualizedContainerService.HintSize="663,2580" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -373,7 +373,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
                         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;insert into TRADEHISTORY  values ('&quot; + date.now.ToString + &quot;','&quot; + stock1 + &quot;',&quot; + quantityText.replace(&quot;,&quot;,&quot;&quot;) + &quot;,&quot; + cstr(price) + &quot;,&quot; + cstr(total) + &quot;, 0,&quot; +&quot; 'sell')&quot;]" />
-                        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;insert into TRADEHISTORY  values ('&quot; + date.now.ToString + &quot;','&quot; + stock1 + &quot;',&quot; + quantityText.replace(&quot;,&quot;,&quot;&quot;) + &quot;,&quot; + cstr(price) + &quot;,&quot; + cstr(total) + &quot;, 0,&quot; +&quot; 'sell')&quot;]">
+                        <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;insert into TRADEHISTORY  values ('&quot; + date.now.ToString + &quot;','&quot; + stock1 + &quot;',&quot; + quantityText.replace(&quot;,&quot;,&quot;&quot;) + &quot;,&quot; + cstr(price) + &quot;,&quot; + cstr(total) + &quot;, 0,&quot; +&quot; 'sell', 'success')&quot;]">
                           <ui:ExecuteNonQuery.Parameters>
                             <scg:Dictionary x:TypeArguments="x:String, Argument" />
                           </ui:ExecuteNonQuery.Parameters>
@@ -387,10 +387,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="667,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,382" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -398,7 +398,19 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Unable to sell &quot; + stock1]" />
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,313" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;Insert into TRADEHISTORY values ('&quot;+ date.now.toString +&quot;','&quot; + stock1 + &quot;',0,0,0,0,'sell','failed' )&quot;]">
+                        <ui:ExecuteNonQuery.Parameters>
+                          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                        </ui:ExecuteNonQuery.Parameters>
+                      </ui:ExecuteNonQuery>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Unable to sell &quot; + stock1]" />
+                    </Sequence>
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
