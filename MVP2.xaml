@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1161,2217</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1160,649</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -98,19 +98,19 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="552,2112" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="476,544" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Portfolio - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="510,2020" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Portfolio - Investopedia Stock Simulator" sap:VirtualizedContainerService.HintSize="434,452" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1804" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,236" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="stockNotAvailable" />
               <Variable x:TypeArguments="x:Boolean" Name="purchaseExists" />
@@ -120,7 +120,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="434,1126" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="1.00:00:00">
+            <ui:RetryScope DisplayName="Find Stock" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="1.00:00:00">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,952" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -183,28 +183,39 @@
               <ui:RetryScope.Condition>
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,544" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Buy" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="663,2580" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Buy Stock" sap:VirtualizedContainerService.HintSize="526,1306" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[stockNotAvailable]" sap:VirtualizedContainerService.HintSize="621,265" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[stockNotAvailable]" sap:VirtualizedContainerService.HintSize="484,209" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="242,116" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Throw Exception="[new BusinessRuleException(&quot;Cannot sell &quot; + Stock1)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
-                      </Sequence>
+                      <Throw Exception="[new BusinessRuleException(&quot;Cannot sell &quot; + Stock1)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                     </If.Then>
                   </If>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -226,7 +237,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Selects sell option." ClickType="Single" DisplayName="Click 'Sell'" sap:VirtualizedContainerService.HintSize="621,197" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Selects sell option." ClickType="Single" DisplayName="Click 'Sell'" sap:VirtualizedContainerService.HintSize="484,197" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="114, 470, 363, 48" FriendlyName="'Sell'" FullSelectorArgument="&lt;webctrl aria-role='option' id='list-item-1064-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' id='list-item-1064-1' tag='DIV' type='' aaname='' check:text='Sell' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAW8AAAA0CAYAAABFArmUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKrSURBVHhe7dq/K+5RHMDx+6/YLSaLzWJVspDFYjGJSBZsZGC2mZSSSZRdWZXCw02SQYn8SDj3nsN1C/d7u/U8dT95verT4zgP47vT+X6/1Wq1tLe3l2rf740xxvznU3r9s9vibYwxgeZDvAH4/4k3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAME1JB4Pz4+prW1tdTZ2ZmamprK59LSUrq5uXn9RrXDw8PU19dXPj9bA3x1DYl3DvfAwEA6PT0t6/Pz8zQzM5N2dnbK+m/EG6Ba3eN9f3+fJiYm0srKyutv/p14A1Sre7zzlcnc3FwaGxurvCY5OTlJIyMjqbm5OXV0dJTTev7bTLwBqtU93tn+/n655+7u7k5bW1vp7u7udedFDneOcd57enpKl5eX5bS+sbFR9sUboFpD4p1dXFykhYWF1NLS8uFkvbi4WPaen5/LOtve3k5TU1Pp4eFBvAH+omHx/uX6+rrEurW1tQQ8m5+fL2+hvJ/x8fFyShdvgGoNj3eWT9j5VcHR0dF0e3tb4p2D/ifiDVCt7vHOob66unpd/ba6uvoW783NzTQ0NFRO5Z8Rb4BqdY93DmxXV1daXl4ucc4xPzo6Sv39/W/XJvkB5eDgYDmB5zdS8l347u5uOjs7K/v5f/T29qaDg4NP1wBfXd3jneW3Saanp1N7e3u5y+7p6Unr6+tvDyyz/EBzdnY2tbW1lYeak5OT6fj4uOzloOe3T4aHh8vP79cAX11D4g1AY4k3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRCQeAMEJN4AAYk3QEDiDRDQS7xr6QfXRk+zS9XfNwAAAABJRU5ErkJggg==" InformativeScreenshot="23b555508df79662fc31dc692417ad46.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Sell" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='DIV' type='' /&gt;" />
                     </uix:NClick.Target>
@@ -236,7 +247,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -258,7 +269,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <uix:NClick sap2010:Annotation.AnnotationText="Previews order to sell." ClickType="Single" DisplayName="Click 'Preview Order'" sap:VirtualizedContainerService.HintSize="621,197" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Previews order to sell." ClickType="Single" DisplayName="Click 'Preview Order'" sap:VirtualizedContainerService.HintSize="484,197" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.investopedia.com/simulator/trade/stocks" DesignTimeRectangle="420, 658, 234, 24" FriendlyName="'Preview Order'" FullSelectorArgument="&lt;webctrl aaname='           Preview Order           ' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='           Preview Order           ' tag='SPAN' type='' check:text='Preview Order' /&gt;" ImageBase64="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" InformativeScreenshot="2d7c563adb665161f6caf35e4dc9c5a7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;" SearchSteps="FuzzySelector, Image" Text="Preview Order" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SPAN' type='' /&gt;" />
                     </uix:NClick.Target>
@@ -268,7 +279,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[purchaseExists]" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[purchaseExists]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="23da97e1-648c-47eb-9cbf-328b3afd96d0" InformativeScreenshot="28d63d11b78709603e893fbaebe3943d" Selector="&lt;html app='chrome.exe' title='Stocks Trade - Investopedia Stock Simulator' /&gt;&#xA;&lt;webctrl aaname='               Submit Order               ' parentid='app' tag='SPAN' /&gt;&#xA;">
                         <ui:Target.TimeoutMS>
@@ -280,9 +291,15 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[purchaseExists]" sap:VirtualizedContainerService.HintSize="621,1309" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[purchaseExists]" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,1160" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,1059" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="priceText" />
                           <Variable x:TypeArguments="x:String" Name="quantityText" />
@@ -372,7 +389,6 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
-                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;insert into TRADEHISTORY  values ('&quot; + date.now.ToString + &quot;','&quot; + stock1 + &quot;',&quot; + quantityText.replace(&quot;,&quot;,&quot;&quot;) + &quot;,&quot; + cstr(price) + &quot;,&quot; + cstr(total) + &quot;, 0,&quot; +&quot; 'sell')&quot;]" />
                         <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1" Sql="[&quot;insert into TRADEHISTORY  values ('&quot; + date.now.ToString + &quot;','&quot; + stock1 + &quot;',&quot; + quantityText.replace(&quot;,&quot;,&quot;&quot;) + &quot;,&quot; + cstr(price) + &quot;,&quot; + cstr(total) + &quot;, 0,&quot; +&quot; 'sell', 'success')&quot;]">
                           <ui:ExecuteNonQuery.Parameters>
                             <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -387,10 +403,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,382" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="530,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -398,12 +414,13 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,313" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <uix:NNavigateBrowser Action="Refresh" DisplayName="Navigate Browser - Refresh" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" />
                       <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;Insert into TRADEHISTORY values ('&quot;+ date.now.toString +&quot;','&quot; + stock1 + &quot;',0,0,0,0,'sell','failed' )&quot;]">
                         <ui:ExecuteNonQuery.Parameters>
                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
