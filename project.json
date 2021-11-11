@@ -1,7 +1,7 @@
 {
   "name": "P2---AI-BIRRI_P-MAXIE_R-RYMARZ_N-SIELATSHOM_O",
   "description": "Blank Process",
-  "main": "Main.xaml",
+  "main": "Main2.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.4.0]",
     "UiPath.Excel.Activities": "[2.9.5]",
@@ -17,6 +17,7 @@
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
+    "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
     "excludedLoggedData": [
@@ -25,7 +26,8 @@
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -53,9 +55,16 @@
       "uniqueId": "a9db9ad5-af58-4f59-bdea-6fcddd849f50",
       "input": [],
       "output": []
+    },
+    {
+      "filePath": "Main2.xaml",
+      "uniqueId": "d4e201a0-a907-4e6e-b120-2fa0b742107a",
+      "input": [],
+      "output": []
     }
   ],
   "isTemplate": false,
   "templateProjectData": {},
-  "publishData": {}
+  "publishData": {},
+  "targetFramework": "Legacy"
 }

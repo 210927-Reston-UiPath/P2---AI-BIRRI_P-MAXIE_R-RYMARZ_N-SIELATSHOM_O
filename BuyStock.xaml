@@ -4,7 +4,7 @@
     <x:Property Name="quantity" Type="InArgument(x:Int32)" />
     <x:Property Name="db" Type="InArgument(ui:DatabaseConnection)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1160,3419</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1160,937</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -79,7 +79,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Buy Stock" sap:VirtualizedContainerService.HintSize="819,3314" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Buy Stock" sap:VirtualizedContainerService.HintSize="552,872" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="stockNotAvailable" />
     </Sequence.Variables>
@@ -88,19 +88,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="777,3222" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="510,780" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'StocksTra Page'" sap:VirtualizedContainerService.HintSize="735,3130" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="0854f5a0e0f6bcf01e61bf40d5bfd500" Selector="&lt;html app='chrome.exe' title='* - Investopedia Stock Simulator' /&gt;" TimeoutMS="5000">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'StocksTra Page'" sap:VirtualizedContainerService.HintSize="468,688" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="0854f5a0e0f6bcf01e61bf40d5bfd500" Selector="&lt;html app='chrome.exe' title='* - Investopedia Stock Simulator' /&gt;" TimeoutMS="5000">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="701,2984" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,542" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -108,7 +108,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence DisplayName="Buy Stock" sap:VirtualizedContainerService.HintSize="663,2757" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Buy Stock" sap:VirtualizedContainerService.HintSize="460,1634" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="canPurchase" />
                   </Sequence.Variables>
@@ -118,7 +118,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="621,894" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2">
+                  <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="418,894" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Enter Stock Name" sap:VirtualizedContainerService.HintSize="376,720" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -128,19 +128,19 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="1000" DisplayName="Click 'A  /simulator/trade'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_35" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                          <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1800" DelayMS="1000" DisplayName="Click 'A  /simulator/trade'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_35" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition OffsetX="51" OffsetY="20" Position="TopLeft" />
                             </ui:Click.CursorPosition>
                             <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f98b82f4-639f-499d-be26-b822f008a31d" InformativeScreenshot="3e50c818e8827c3ab6217c1c59a4664a" Selector="&lt;webctrl aaname='             trade           ' tag='A' /&gt;&#xD;&#xA;" WaitForReady="COMPLETE">
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f98b82f4-639f-499d-be26-b822f008a31d" InformativeScreenshot="3e50c818e8827c3ab6217c1c59a4664a" Selector="&lt;webctrl aaname='             trade           ' tag='A' /&gt;&#xA;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
                               </ui:Target>
                             </ui:Click.Target>
                           </ui:Click>
-                          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="700" DisplayName="Type Into 'INPUT  input-925'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[stock]">
+                          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayMS="700" DisplayName="Type Into 'INPUT  input-925'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" SimulateType="True" Text="[stock]">
                             <ui:TypeInto.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dbcc8e77-b36c-41e3-822e-71ec4414f734" InformativeScreenshot="3fd0d1d33b1312976adc413a7afb91c1" Selector="&lt;webctrl aaname='         Symbol       ' tag='SPAN' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='INPUT' idx='1' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
@@ -186,7 +186,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <If Condition="[StockNotAvailable]" DisplayName="Throw If Stock Not Available" sap:VirtualizedContainerService.HintSize="621,51" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[StockNotAvailable]" DisplayName="Throw If Stock Not Available" sap:VirtualizedContainerService.HintSize="418,51" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -197,7 +197,7 @@
                       <Throw Exception="[new BusinessRuleException(&quot;Unable to purchase stock&quot; + stock)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                     </If.Then>
                   </If>
-                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  input-941'" EmptyField="False" sap:VirtualizedContainerService.HintSize="621,134" sap2010:WorkflowViewState.IdRef="TypeInto_11" SendWindowMessages="False" SimulateType="True" Text="[cstr(quantity)]">
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  input-941'" EmptyField="False" sap:VirtualizedContainerService.HintSize="418,134" sap2010:WorkflowViewState.IdRef="TypeInto_11" SendWindowMessages="False" SimulateType="True" Text="[cstr(quantity)]">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="71950228-366e-4b6c-82c3-a293ad16330a" InformativeScreenshot="ab6dea8649f47e1b460f0c78d40f311c" Selector="&lt;webctrl aaname='           Quantity         ' tag='SPAN' /&gt;&#xA;&lt;nav up='1' /&gt;&#xA;&lt;webctrl tag='INPUT' type='number' /&gt;&#xA;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
@@ -206,7 +206,7 @@
                       </ui:Target>
                     </ui:TypeInto.Target>
                   </ui:TypeInto>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="621,106" sap2010:WorkflowViewState.IdRef="Click_40" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="418,106" sap2010:WorkflowViewState.IdRef="Click_40" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition OffsetX="202" OffsetY="38" Position="TopLeft" />
                     </ui:Click.CursorPosition>
@@ -230,7 +230,7 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[canPurchase]" DisplayName="Throw if Cannot Purchase" sap:VirtualizedContainerService.HintSize="621,1174" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[canPurchase]" DisplayName="Throw if Cannot Purchase" sap:VirtualizedContainerService.HintSize="418,51" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -347,10 +347,10 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="464,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,380" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -358,14 +358,13 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,311" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:RefreshBrowser Browser="{x:Null}" DisplayName="Refresh Browser" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="RefreshBrowser_1" />
                       <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Non Query" ExistingDbConnection="[db]" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_2" Sql="[&quot;insert into TRADEHISTORY values ('&quot; + date.now.toString +&quot;','&quot; + stock + &quot;',0,0,0,0,'buy','failed')&quot;]">
                         <ui:ExecuteNonQuery.Parameters>
                           <scg:Dictionary x:TypeArguments="x:String, Argument" />

@@ -31,7 +31,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -50,25 +50,33 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID0}" DisplayName="Main___StateMachine" sap:VirtualizedContainerService.HintSize="647,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID4}" DisplayName="Main___StateMachine" sap:VirtualizedContainerService.HintSize="647,636" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <x:Double x:Key="StateContainerWidth">613</x:Double>
         <x:Double x:Key="StateContainerHeight">600</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">306,77.5 306,107.5 322,107.5 322,159.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">330,43.75 360,43.75 360,43.05 423,43.05</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <State x:Name="__ReferenceID0" DisplayName="Scrape Portfolio" sap:VirtualizedContainerService.HintSize="180,83" sap2010:WorkflowViewState.IdRef="State_3">
       <State.Entry>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ScrapePortfolio workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ScrapePortfolio.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <OutArgument x:TypeArguments="sd:DataTable" x:Key="portfolio">
-              <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="portfolio" />
-            </OutArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="portfolio">[portfolio]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </State.Entry>
@@ -135,17 +143,13 @@
               <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Transition.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="portfolio.rows.count &gt; 0" />
-          </Transition.Condition>
+          <Transition.Condition>[portfolio.rows.count &gt; 0]</Transition.Condition>
           <Transition.To>
             <State x:Name="__ReferenceID2" DisplayName="Sell" sap:VirtualizedContainerService.HintSize="186,87" sap2010:WorkflowViewState.IdRef="State_4">
               <State.Entry>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SellStocks workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SellStocks.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Stocks">
-                      <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="portfolio" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Stocks">[portfolio]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </State.Entry>
@@ -159,7 +163,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <State.Transitions>
-                <Transition DisplayName="Finish Selling" sap2010:WorkflowViewState.IdRef="Transition_2">
+                <Transition DisplayName="Continue" sap2010:WorkflowViewState.IdRef="Transition_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">123,359.5 123,380 361,380</av:PointCollection>
@@ -167,14 +171,15 @@
                       <x:Int32 x:Key="DestConnectionPointIndex">37</x:Int32>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <Transition.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="date.now &lt; date.today + new timespan(16,0,0)" />
+                  </Transition.Condition>
                   <Transition.To>
                     <State x:Name="__ReferenceID1" DisplayName="Scrape Research" sap:VirtualizedContainerService.HintSize="218,114" sap2010:WorkflowViewState.IdRef="State_5">
                       <State.Entry>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke P2-ScrapeResearchFinal workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="P2-ScrapeResearchFinal.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtDatatable1">
-                              <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="newStocks" />
-                            </OutArgument>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="dtDatatable1">[newStocks]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </State.Entry>
@@ -190,14 +195,12 @@
                       <State.Exit>
                         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Buy Stocks After Research workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Buy Stocks After Research.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="stocks">
-                              <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="newStocks" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="sd:DataTable" x:Key="stocks">[newStocks]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </State.Exit>
                       <State.Transitions>
-                        <Transition DisplayName="Finished Buying" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_3">
+                        <Transition DisplayName="Continue" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:PointCollection x:Key="ConnectorLocation">579,374.3 609,374.3 609,196.85 413,196.85</av:PointCollection>
@@ -210,6 +213,29 @@
                           </Transition.To>
                         </Transition>
                       </State.Transitions>
+                    </State>
+                  </Transition.To>
+                </Transition>
+                <Transition DisplayName="End at 4PM" sap2010:WorkflowViewState.IdRef="Transition_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">95.1,359.5 95.1,389.5 117,389.5 117,452.5</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">27</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="date.now &gt; date.today + new Timespan(16,0,0)" />
+                  </Transition.Condition>
+                  <Transition.To>
+                    <State x:Name="__ReferenceID3" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_7" IsFinal="True">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">50,452.5</av:Point>
+                          <av:Size x:Key="ShapeSize">134,61</av:Size>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </State>
                   </Transition.To>
                 </Transition>
@@ -228,14 +254,43 @@
           <Transition.To>
             <x:Reference>__ReferenceID1</x:Reference>
           </Transition.To>
-          <Transition.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="portfolio.rows.count = 0" />
-          </Transition.Condition>
+          <Transition.Condition>[portfolio.rows.count = 0]</Transition.Condition>
         </Transition>
       </State.Transitions>
     </State>
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <State x:Name="__ReferenceID4" DisplayName="Login" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_8">
+      <State.Entry>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Login workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Login.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <scg:Dictionary x:TypeArguments="x:String, Argument" />
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </State.Entry>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">423,9.5</av:Point>
+          <av:Size x:Key="ShapeSize">134,61</av:Size>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <State.Transitions>
+        <Transition DisplayName="Begin" sap2010:WorkflowViewState.IdRef="Transition_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:PointCollection x:Key="ConnectorLocation">496.7,70.5 496.7,100.5 314,100.5 314,159.5</av:PointCollection>
+              <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+              <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Transition.To>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </Transition.To>
+        </Transition>
+      </State.Transitions>
+    </State>
     <StateMachine.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="portfolio" />
       <Variable x:TypeArguments="sd:DataTable" Name="newStocks" />
