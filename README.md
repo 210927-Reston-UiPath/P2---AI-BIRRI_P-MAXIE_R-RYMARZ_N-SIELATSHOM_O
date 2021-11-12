@@ -5,9 +5,15 @@
 
 **Overview (To Be Updated)**
 
-Goal - The Best Return: User will make the most out of investments. 
+The Best Return: User will make the most out of investments. 
 This will occur through an automated process that will optimize their options concerning Stock.
 Allowing customers to buy and sell optimized stock options.
+
+What: P2STOCK is an automation application that allows its’ user to buy and sell stock. With additional features.
+
+How: P2STOCK searches and optimizes buying and selling options. Picking the result that will give its user the best return.
+
+Importance: P2STOCK allows users to step away from their Stock Portfolio, letting the automation buy and sell stock without user input. This feature is especially useful to those who do not have the desired time or know-how to buy and sell stock. 
 
 ----
 
