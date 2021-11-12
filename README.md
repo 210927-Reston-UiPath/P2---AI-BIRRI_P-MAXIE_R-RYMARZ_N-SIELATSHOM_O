@@ -59,31 +59,31 @@ User Buys and Sells Stock without being at their computer
 MVP
 --------------
 
-Bot is able to Buy
+Bot is able to Buy - Complete
 
-Bot is able to Sell
+Bot is able to Sell - Complete
 
-Bot Scrapes Porfolio Page 
+Bot Scrapes Porfolio Page - Complete
 
-Bot Scrapes Research Page
+Bot Scrapes Research Page - Complete
 
-Bot compares and evaluates stock based on the information gathered from scraped data
+Bot compares and evaluates stock based on the information gathered from scraped data - Complete
 
-Psuedo Unattended Bot is able to start and end using Orchestrator (Condition: Loop every 5m)
+Psuedo Unattended Bot is able to start and end using Orchestrator - Complete
 
 **Stretch**
 --------------
-Program is able to suggest stock options to user
+Program is able to suggest stock options to user - Complete
 
-User is able to remove stock options that reach a certain level (negative)
+User is able to remove stock options that reach a certain level (Top 20) - Complete 
 
-User is able to Initiate transaction process as a bulk transaction for Multiple Clients
+User is able to Initiate transaction process as a bulk transaction for Multiple Clients - Incomplete
 
-User is able to send out multiple emails after bulk transaction process
+User is able to send out multiple emails after bulk transaction process - Complete
 
-User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format)
+User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format) - Incomplete
 
-User is able to receive Email graph data to a client 
+User is able to receive Email graph data to a client - COmplete
 
 **Constraint**
 --------------
@@ -91,9 +91,6 @@ Websites:
 
 Site #1
 https://www.investopedia.com/simulator/
-
-Site #2
-To Be Created (HTML)
 
 ----
 
@@ -103,6 +100,6 @@ Using Data Scraped Data to Buy and Sell(transaction) as a single client (Selecti
 
 Using Excel - Exporting the final report as a graph
 
-Timed Conditions(Start at x time, end at y time, Restart program at time z)
+Timed Conditions(Orchestrator Trigger)
 
 	Note: The purpose of timed conditions is to create a fully automated application that does not require manual input
