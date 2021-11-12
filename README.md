@@ -102,4 +102,4 @@ Using Excel - Exporting the final report as a graph
 
 Timed Conditions(Orchestrator Trigger)
 
-	Note: The purpose of timed conditions is to create a fully automated application that does not require manual input
+	Note: The purpose of the Orchestrator Trigger is fully automate the application that does not require manual input
