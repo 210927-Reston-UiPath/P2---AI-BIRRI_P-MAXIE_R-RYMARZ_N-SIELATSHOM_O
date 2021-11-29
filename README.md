@@ -3,8 +3,7 @@
 
 **Project #2 - P2STOCK**
 
-**Overview**
-
+**Overview (To Be Updated)**
 The Best Return
 
 What: P2STOCK is an automation application that allows its’ user to buy and sell stock. With additional features.
@@ -57,49 +56,50 @@ User Buys and Sells Stock without being at their computer
 MVP
 --------------
 
-Bot is able to Buy
+- [ ] Bot is able to Buy
 
-Bot is able to Sell
+- [ ] Bot is able to Sell
 
-Bot Scrapes Porfolio Page 
+- [ ] Bot Scrapes Porfolio Page 
 
-Bot Scrapes Research Page
+- [ ] Bot Scrapes Research Page
 
-Bot compares and evaluates stock based on the information gathered from scraped data
+- [ ] Bot compares and evaluates stock based on the information gathered from scraped data
 
-Psuedo Unattended Bot is able to start and end using Orchestrator (Condition: Loop every 5m)
-
-Buy and Selling From A Stock Simulator
+- [ ] Psuedo Unattended Bot is able to start and end using Orchestrator (Condition: Loop every 5m)
 
 **Stretch**
 --------------
-Program is able to suggest stock options to user
+- [ ] Program is able to suggest stock options to user
 
-User is able to remove stock options that reach a certain level (negative)
+- [ ] User is able to remove stock options that reach a certain level (negative)
 
-User is able to Initiate transaction process as a bulk transaction for Multiple Clients
+- [ ] User is able to Initiate transaction process as a bulk transaction for Multiple Clients
 
-User is able to send out multiple emails after bulk transaction process
+- [ ] User is able to send out multiple emails after bulk transaction process
 
-User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format)
+- [ ] User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format)
 
-User is able to receive Email graph data to a client 
+- [ ] User is able to receive Email graph data to a client 
 
-----
+**Constraint**
+--------------
+Websites:
 
-Using a State Machine
+* Utilized the investopedipa website: https://www.investopedia.com/simulator/
 
-Using Data Scraped Data to Buy and Sell(transaction) as a single client (Selecting the five best options out a pool of 20 stock options)
+* Using a State Machine
 
-Using Excel - Exporting the final report as a graph
+* Using Data Scraped Data to Buy and Sell(transaction) as a single client (Selecting the five best options out a pool of 20 stock options)
 
-Timed Conditions(Start at x time, end at y time, Restart program at time z)
+* Using Excel - Exporting the final report as a graph
+
+* Timed Conditions(Start at x time, end at y time, Restart program at time z)
 
 	Note: The purpose of timed conditions is to create a fully automated application that does not require manual input
 
 -----
 **Tech Stack**
-
 UiPath Studio
 
 Orchestrator
