@@ -1,13 +1,16 @@
 # P2---AI-BIRRI_P-MAXIE_R-RYMARZ_N-SIELATSHOM_O
 ------------------------------------------------
 
-**Project #2**
+**Project #2 - P2STOCK**
 
 **Overview (To Be Updated)**
+The Best Return
 
-Goal - The Best Return: User will make the most out of investments. 
-This will occur through an automated process that will optimize their options concerning Stock.
-Allowing customers to buy and sell optimized stock options.
+What: P2STOCK is an automation application that allows its’ user to buy and sell stock. With additional features.
+
+How: P2STOCK searches and optimizes buying and selling options. Picking the result that will give its user the best return.
+
+Importance: P2STOCK allows users to step away from their Stock Portfolio, letting the automation buy and sell stock without user input. This feature is especially useful to those who do not have the desired time or know-how to buy and sell stock. 
 
 ----
 
@@ -100,3 +103,10 @@ Using Excel - Exporting the final report as a graph
 Timed Conditions(Start at x time, end at y time, Restart program at time z)
 
 	Note: The purpose of timed conditions is to create a fully automated application that does not require manual input
+
+-----
+**Tech Stack**
+UiPath Studio
+Orchestrator
+PostgreSQL/SQL Server(Azure)
+
