@@ -53,7 +53,7 @@ User Buys and Sells Stock without being at their computer
 MVP
 --------------
 
-[] Bot is able to Buy
+[*] Bot is able to Buy
 
 Bot is able to Sell
 
