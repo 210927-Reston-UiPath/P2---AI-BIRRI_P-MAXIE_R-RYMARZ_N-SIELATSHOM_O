@@ -4,6 +4,7 @@
 **Project #2 - P2STOCK**
 
 **Overview**
+
 The Best Return
 
 What: P2STOCK is an automation application that allows its’ user to buy and sell stock. With additional features.
