@@ -3,7 +3,7 @@
 
 **Project #2 - P2STOCK**
 
-**Overview (To Be Updated)**
+**Overview**
 The Best Return
 
 What: P2STOCK is an automation application that allows its’ user to buy and sell stock. With additional features.
@@ -68,6 +68,8 @@ Bot compares and evaluates stock based on the information gathered from scraped 
 
 Psuedo Unattended Bot is able to start and end using Orchestrator (Condition: Loop every 5m)
 
+Buy and Selling From A Stock Simulator
+
 **Stretch**
 --------------
 Program is able to suggest stock options to user
@@ -81,16 +83,6 @@ User is able to send out multiple emails after bulk transaction process
 User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format)
 
 User is able to receive Email graph data to a client 
-
-**Constraint**
---------------
-Websites:
-
-Site #1
-https://www.investopedia.com/simulator/
-
-Site #2
-To Be Created (HTML)
 
 ----
 
