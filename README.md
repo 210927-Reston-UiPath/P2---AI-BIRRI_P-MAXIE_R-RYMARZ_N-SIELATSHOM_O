@@ -53,7 +53,7 @@ User is able to receive end of day report by email
 
 User Buys and Sells Stock without being at their computer
 
-MVP
+MVPs
 --------------
 
 - [ ] Bot is able to Buy
@@ -68,7 +68,7 @@ MVP
 
 - [ ] Psuedo Unattended Bot is able to start and end using Orchestrator (Condition: Loop every 5m)
 
-**Stretch**
+**Stretch Goals**
 --------------
 - [ ] Program is able to suggest stock options to user
 
@@ -98,8 +98,9 @@ Websites:
 
 	Note: The purpose of timed conditions is to create a fully automated application that does not require manual input
 
------
 **Tech Stack**
+-------------
+
 UiPath Studio
 
 Orchestrator
