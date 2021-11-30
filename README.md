@@ -55,32 +55,21 @@ User Buys and Sells Stock without being at their computer
 
 MVPs
 --------------
-
-- [ ] Bot is able to Buy
-
-- [ ] Bot is able to Sell
-
-- [ ] Bot Scrapes Porfolio Page 
-
-- [ ] Bot Scrapes Research Page
-
-- [ ] Bot compares and evaluates stock based on the information gathered from scraped data
-
-- [ ] Psuedo Unattended Bot is able to start and end using Orchestrator (Condition: Loop every 5m)
+- [x] Bot is able to Buy
+- [x] Bot is able to Sell
+- [x] Bot Scrapes Porfolio Page 
+- [x] Bot Scrapes Research Page
+- [x] Bot compares and evaluates stock based on the information gathered from scraped data
+- [x] Psuedo Unattended Bot is able to start and end using Orchestrator (Condition: Loop every 5m)
 
 **Stretch Goals**
 --------------
-- [ ] Program is able to suggest stock options to user
-
-- [ ] User is able to remove stock options that reach a certain level (negative)
-
-- [ ] User is able to Initiate transaction process as a bulk transaction for Multiple Clients
-
-- [ ] User is able to send out multiple emails after bulk transaction process
-
-- [ ] User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format)
-
-- [ ] User is able to receive Email graph data to a client 
+- [x] Program is able to suggest stock options to user
+- [x] User is able to remove stock options that reach a certain level (negative)
+- [x] User is able to Initiate transaction process as a bulk transaction for Multiple Clients
+- [x] User is able to send out multiple emails after bulk transaction process
+- [x] User is able to receive end of day report in PDF format (Using PDF Automation - Transfer Excel Graph Data into PDF Format)
+- [x] User is able to receive Email graph data to a client 
 
 **Constraint**
 --------------
@@ -94,16 +83,16 @@ Websites:
 
 * Using Excel - Exporting the final report as a graph
 
-* Timed Conditions(Start at x time, end at y time, Restart program at time z)
+* Timed Conditions (Start at x time, end at y time, Restart program at time z)
 
 	Note: The purpose of timed conditions is to create a fully automated application that does not require manual input
 
 **Tech Stack**
 -------------
 
-UiPath Studio
+* UiPath Studio
 
-Orchestrator
+* Orchestrator
 
-PostgreSQL/SQL Server(Azure)
+* PostgreSQL/SQL Server(Azure)
 
